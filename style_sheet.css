@@ -58,12 +58,23 @@
 	width:100%;
 	height:400px;
 	margin-top:10px;
-	background-color:RGB(109,109,109);
 }
 
 #footer{
 	width:100%;
-	height:100px;
-	margin-top:5px;
+	height:50px;
+	margin-top:10px;
 	background-color:blue;
+}
+
+#screen_body{
+	background-color:blue;
+	margin-left:210px;
+	height:500px;
+}
+
+#sub_menu{
+	float:left;
+	width:200px;
+	background-color:red;
 }
