@@ -1,7 +1,7 @@
 <div id="menu_bar">
 	<div id="menu_pack">
 		<div id="menu_button">
-			<a href="./" >Menu1</a>
+			<a href="default.php" >Home</a>
 		</div>
 		<div id="menu_separator">
 			<img src="img/bar.png" alt="clic"/>
@@ -10,7 +10,16 @@
 
 	<div id="menu_pack">
 		<div id="menu_button">
-			<a href="./" >Menu1</a>
+			<a href="products.php" >Products</a>
+		</div>
+		<div id="menu_separator">
+			<img src="img/bar.png" alt="clic"/>
+		</div>
+	</div>
+
+	<div id="menu_pack">
+		<div id="menu_button">
+			<a href="clients.php" >Clients</a>
 		</div>
 		<div id="menu_separator">
 			<img src="img/bar.png" alt="clic"/>
@@ -19,7 +28,7 @@
 	
 	<div id="menu_pack">
 		<div id="menu_button">
-			<a href="./" >Menu1</a>
+			<a href="suppliers.php" >Suppliers</a>
 		</div>
 		<div id="menu_separator">
 			<img src="img/bar.png" alt="clic"/>
@@ -28,7 +37,15 @@
 	
 	<div id="menu_pack">
 		<div id="menu_button">
-			<a href="./" >Menu1</a>
+			<a href="repositories.php" >Repositories</a>
+		</div>
+		<div id="menu_separator">
+			<img src="img/bar.png" alt="clic"/>
+		</div>
+	</div>
+	<div id="menu_pack">
+		<div id="menu_button">
+			<a href="statistics.php" >Statistics</a>
 		</div>
 		<div id="menu_separator">
 			<img src="img/bar.png" alt="clic"/>

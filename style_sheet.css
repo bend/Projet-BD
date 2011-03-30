@@ -35,7 +35,6 @@
 
 #menu_button{
 	float:left;
-	margin-top:2px;
 	margin-left:5px;
 	margin-right:5px;
 }
@@ -44,6 +43,12 @@
 	color:white;
 	font-weight:bold;
 	text-decoration:none;
+	font-size:22px;
+}
+
+#menu_button a:hover
+{
+	color:black;
 }
 
 #menu_separator{
@@ -56,7 +61,51 @@
 
 #contents{
 	width:100%;
+	min-height:400px;
 	margin-top:10px;
+	background-color:RGB(109,109,109);
+}
+
+
+#screen_body{
+	background-color:RGB(109,109,109);
+	min-height:400px;
+	margin-left:210px;
+}
+
+#sub_menu{
+	margin-top:20px;
+	margin-bottom:20px;
+	margin-left:10px;
+	padding-left:10px;
+	padding-top:20px;
+	float:left;
+	width:150px;
+	min-height:200px;
+	border:3px solid white;
+	background-color:
+}
+
+#sub_menu_title{
+	padding:3px 3px 3px 3px;
+	width:130px;
+	border:2px dotted white;
+	margin-bottom:10px;
+}
+
+#sub_menu_contents a{
+	color:white;
+	text-decoration:none;
+	font-size:18px;
+	font-weight:bold;
+}
+
+#sub_menu_contents a:hover
+{
+	color:black;
+}
+#sub_menu li{
+	list-style:none;
 }
 
 #footer{
@@ -64,16 +113,5 @@
 	height:50px;
 	margin-top:10px;
 	color:white;
-	background-color:blue;
-}
-
-#screen_body{
-	background-color:blue;
-	margin-left:210px;
-}
-
-#sub_menu{
-	float:left;
-	width:200px;
-	background-color:red;
+	background-color:RGB(109,109,109);
 }
