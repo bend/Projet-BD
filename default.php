@@ -30,7 +30,6 @@ session_start();
         ?>
         </div>
 		<div id="footer">
-			bmabmabma
 			<?php
 			require("footer.php");
  			?>

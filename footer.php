@@ -1,3 +1,3 @@
 <?php
-echo "blablabla";
+echo 'Copyright Benoit Daccache, Anthony Popolo Cagnisi, Romain Vanvooren.';
 ?>
