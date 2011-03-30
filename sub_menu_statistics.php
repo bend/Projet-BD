@@ -1,5 +1,5 @@
 <div id="sub_menu_title">
-	Products options
+	Statistics options
 </div>
 
 

@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 ?>
@@ -26,7 +27,7 @@ session_start();
         </div>
         <div id="contents">
 		<?php
-        require("search_all_screen.php");
+        require("clients_screen.php");
         ?>
         </div>
 		<div id="footer">

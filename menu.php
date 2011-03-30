@@ -54,7 +54,7 @@
 </div>
 <form method="post" action="search_all.php">
 	<div id="search_field">
-		<input type="text" value="Search here" id="search" size=20 onfocus=javascript:this.value="" onblur="javascript:if(this.value=='')this.value='Search here'"/>
+		<input type="text" value="Search here" id="search" name="search" size=20 onfocus=javascript:this.value="" onblur="javascript:if(this.value=='')this.value='Search here'"/>
 		<input type="submit" value="Search" id="submit"/>
 	</div>
 </form>

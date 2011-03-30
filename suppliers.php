@@ -26,7 +26,7 @@ session_start();
         </div>
         <div id="contents">
 		<?php
-        require("search_all_screen.php");
+        require("suppliers_screen.php");
         ?>
         </div>
 		<div id="footer">

@@ -1,5 +1,6 @@
+
 <div id="sub_menu_title">
-	Home options
+ 	Clients options
 </div>
 <div id="sub_menu_contents">
 <li><a href=""> test</a></li>
