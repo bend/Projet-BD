@@ -11,3 +11,33 @@ function show_all(){
 	 show("#contents"); 
 	 show("#footer"); 
 }
+
+function load_add_client(){
+    var request = this.GetXmlHttpObject();
+	var page = "../subscreens/client_add.php";
+    request.open('GET' , page ,false);
+    request.send(null);
+    if (request.readyState==4 || request.readyState=="complete"){
+    	document.getElementById("screen_body").innerHTML=request.responseText;
+   	return ;
+    }
+}
+
+
+function GetXmlHttpObject(){
+    var xmlHttp=null;
+    try{
+        // Firefox, Opera 8.0+, Safari
+        xmlHttp=new XMLHttpRequest();
+    }
+    catch (e){
+        // Internet Explorer
+        try{
+            xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+        }
+        catch (e){
+            xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    }
+    return xmlHttp;
+}
