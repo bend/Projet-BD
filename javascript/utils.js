@@ -12,12 +12,14 @@ function show_all(){
 	 show("#footer"); 
 }
 
+
 function load_subscreen(page){
     var request = this.GetXmlHttpObject();
     request.open('GET' , page ,false);
     request.send(null);
     if (request.readyState==4 || request.readyState=="complete"){
     	document.getElementById("screen_body").innerHTML=request.responseText;
+	show("#screen_body");
    	return ;
     }
 }
