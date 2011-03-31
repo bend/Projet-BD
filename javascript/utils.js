@@ -12,9 +12,8 @@ function show_all(){
 	 show("#footer"); 
 }
 
-function load_add_client(){
+function load_subscreen(page){
     var request = this.GetXmlHttpObject();
-	var page = "../subscreens/client_add.php";
     request.open('GET' , page ,false);
     request.send(null);
     if (request.readyState==4 || request.readyState=="complete"){
@@ -26,16 +25,12 @@ function load_add_client(){
 
 function GetXmlHttpObject(){
     var xmlHttp=null;
-    try{
-        // Firefox, Opera 8.0+, Safari
+    try{// Firefox, Opera 8.0+, Safari
         xmlHttp=new XMLHttpRequest();
-    }
-    catch (e){
-        // Internet Explorer
+    }catch (e){// Internet Explorer
         try{
             xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
-        }
-        catch (e){
+        }catch (e){
             xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
         }
     }
