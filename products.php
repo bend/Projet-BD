@@ -10,8 +10,9 @@ session_start();
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<link rel="stylesheet" type="text/css" media="screen" href="style_sheet.css" />
 		<script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=API_KEY"></script>
-<script type="text/javascript" src="javascript/jquery-1.5.1.min.js"></script>
+		<script type="text/javascript" src="javascript/jquery-1.5.1.min.js"></script>
 		<script type="text/javascript" src="javascript/jquery.gmap-1.1.0.js"></script>
+		<script type="text/javascript" src="javascript/utils.js"></script>
     </head>
     <body>
         <div id="header">
@@ -37,3 +38,7 @@ session_start();
     </body>
 
 </html>
+
+<script type="text/javascript">
+	show_all();
+</script>

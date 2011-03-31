@@ -5,7 +5,5 @@
 	?>
 </div>
 <div id="screen_body">
-	azeaze
-
 </div>
 
