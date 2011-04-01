@@ -1,20 +1,11 @@
 <fieldset>
 <legend>Add new supplier</legend>
 <fieldset>
-<legend> Info</legend> 
+<legend> Personnal info</legend> 
 <ol>   
 <li>   
 <label for="name">Name:</label>   
 <input id="name" name="name" class="text" type="text" />   
-</li>   
-<li>   
-<label for="Surname">Surname</label>   
-<input id="surname" name="surname" class="text" type="text" />   
-</li>   
-<li>   
-<label for="">Bankruptcy</label>   
-<input id="banckrupt" name="banckrupt" class="text" type="radio" />True  
-<input id="banckrupt" name="banckrupt" class="text" type="radio" />False
 </li>   
 </ol>
 </fieldset>   
