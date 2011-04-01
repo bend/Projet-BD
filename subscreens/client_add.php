@@ -1,6 +1,3 @@
-
-<script type="text/javascript" src="javascript/utils.js"></script>
-
 <fieldset>
 <legend>Add new client</legend>
 <fieldset>
