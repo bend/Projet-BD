@@ -1,7 +1,7 @@
 <fieldset>
-<legend>Add new Repository</legend>
+<legend>Edit a repository</legend>
 <fieldset>
-<legend>Info</legend> 
+<legend> Info</legend> 
 <ol>   
 <li>   
 <label for="name">Name:</label>   

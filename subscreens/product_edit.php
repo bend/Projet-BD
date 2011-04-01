@@ -1,24 +1,27 @@
 <fieldset>
-<legend>Add new Repository</legend>
-<fieldset>
-<legend>Info</legend> 
-<ol>   
+<legend>Edit a  product</legend>
+<ol>
 <li>   
-<label for="name">Name:</label>   
-<input id="name" name="name" class="text" type="text" />   
+<label for="InternalRef">Internal ref:</label>   
+<input id="ref" name="ref" class="text" type="text" />   
+</li>   
+<li>   
+<label for="Brand">Brand</label>   
+<input id="brand" name="brand" class="text" type="text" />   
+</li>   
+<li>   
+<label for="Denomination">Denomination:</label>   
+<input id="denom" name="denom" class="text" type="text" />   
 </li>   
 </ol>
-</fieldset>   
-<fieldset>   
-<legend> Address</legend>   
 <ol>   
 <li>   
-<label for="RoadName">Road name:</label>   
-<input id="roadname" name="roadname" class="text"   
+<label for="Description">Description:</label>   
+<input id="description" name="description" class="text"   
 type="text" />   
 </li>   
 <li>   
-<label for="RoadNumber">Road number</label>   
+<label for="">Road number</label>   
 <input id="roadnumber" name="roadnumber" class="text"   
 type="text" />   
 </li>   
@@ -38,8 +41,7 @@ class="text textSmall" type="text" />
 <input id="country" name="country" class="text"   
 type="text" />   
 </li>   
-</ol>   
-</fieldset>   
 <input type="button" value="Submit"/>
 </fieldset>
+</ol>   
 

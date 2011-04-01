@@ -1,11 +1,19 @@
 <fieldset>
-<legend>Add new Repository</legend>
+<legend>Edit a client</legend>
 <fieldset>
-<legend>Info</legend> 
+<legend> Personnal info</legend> 
 <ol>   
 <li>   
 <label for="name">Name:</label>   
 <input id="name" name="name" class="text" type="text" />   
+</li>   
+<li>   
+<label for="Surname">Surname</label>   
+<input id="surname" name="surname" class="text" type="text" />   
+</li>   
+<li>   
+<label for="">VAT number</label>   
+<input id="vatnum" name="vatnum" class="text" type="text" />   
 </li>   
 </ol>
 </fieldset>   
