@@ -13,7 +13,8 @@
 </li>   
 <li>   
 <label for="">VAT number</label>   
-<input id="vatnum" name="vatnum" class="text" type="text" />   
+<input id="vatnum" name="vatnum" class="text" type="text" onblur="javascript:check_numvat(this.value);"/>
+<span id="available"></span>
 </li>   
 </ol>
 </fieldset>   
@@ -48,6 +49,6 @@ type="text" />
 </li>   
 </ol>   
 </fieldset>   
-<input type="button" value="Submit"/>
+<input type="button" value="Submit" onclick="javascript:add_clients();"/>
 </fieldset>
 

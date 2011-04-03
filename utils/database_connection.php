@@ -4,7 +4,7 @@ $bdd;
 function database_connect(){
 $username = 'root';
 $password = 'root';
-$dbname = 'test';
+$dbname = 'STOCK';
 $host = 'localhost';
 
 	try{
@@ -16,16 +16,16 @@ $host = 'localhost';
 	}
 }
 
-function database_execute($query){
+function database_query($query){
 	global $bdd;
 	try{
-		$bdd->exec($query);
+		return $bdd->query($query);
 	}catch(Exception $e){
 		die('Erreur : ' . $e->getMessage());
 	}
 }
 
-function database_query($query){
+function database_edit($query){
 	global $bdd;
 	try{
 		$query_prepare_1=$bdd->prepare($query); 
@@ -37,8 +37,7 @@ function database_query($query){
 }
 
 
-database_connect();
-database_execute("insert into test(t) values ('ze')");
+/*database_connect();
 echo 'ok';
 echo 'ok';
 $requete_prepare_1=database_query("SELECT * from test");
@@ -50,3 +49,4 @@ while($lignes=$requete_prepare_1->fetch(PDO::FETCH_OBJ))
 
 
 ?>
+ */
