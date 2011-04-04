@@ -1,3 +1,5 @@
+
+
 function show(balise){
 	 $(balise).hide();
 	 $(balise).fadeIn(500);
@@ -9,6 +11,7 @@ function show_all(){
 	 show("#contents"); 
 	 show("#footer"); 
 }
+
 
 
 function load_subscreen(page){
@@ -39,8 +42,10 @@ function GetXmlHttpObject(){
 
 function add_clients(){
 	// TODO DO BETTER CHECK HERE
+	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
 	if(document.getElementById("name").value=="" || document.getElementById("vatnum").value == "" || document.getElementById("roadname").value==""){
 		alert("Please fill Name, VAT and road fields");
+		document.getElementById("loading").innerHTML= "";
 		return;
 	}
 
@@ -48,6 +53,7 @@ function add_clients(){
     xmlHttp=GetXmlHttpObject();
     if (xmlHttp==null){
         alert ("Browser does not support HTTP Request");
+		document.getElementById("loading").innerHTML= "";
         return;
     }
     var url="checks/check_num_vat_bool.php";

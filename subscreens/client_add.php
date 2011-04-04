@@ -48,7 +48,8 @@ class="text textSmall" type="text" />
 type="text" />   
 </li>   
 </ol>   
-</fieldset>   
+</fieldset>
 <input type="button" value="Submit" onclick="javascript:add_clients();"/>
+<div id="loading"></div>
 </fieldset>
 
