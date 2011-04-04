@@ -1,5 +1,4 @@
 
-
 function show(balise){
 	 $(balise).hide();
 	 $(balise).fadeIn(500);
@@ -42,6 +41,7 @@ function GetXmlHttpObject(){
 
 function add_clients(){
 	// TODO DO BETTER CHECK HERE
+        // TODO A CLIENT CAN ALSO BE A SUPPLIER
 	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
 	if(document.getElementById("name").value=="" || document.getElementById("vatnum").value == "" || document.getElementById("roadname").value==""){
 		alert("Please fill Name, VAT and road fields");
