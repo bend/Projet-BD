@@ -330,3 +330,66 @@ function check_repo_name(str){
 	}
 
 }
+
+function load_client(numtva){
+    xmlHttp=GetXmlHttpObject();
+    if (xmlHttp==null){
+        alert ("Browser does not support HTTP Request");
+        return;
+    }
+    var url="loads/client_load.php";
+    url=url+"?vatnum="+numtva;
+    xmlHttp.open("GET",url,false);
+    xmlHttp.send(null);
+	var resp = xmlHttp.responseText;
+	var array = resp.split("#@%");
+	
+	document.getElementById("name").value = array[0];
+	document.getElementById("surname").value = array[1];
+	document.getElementById("vatnum").value = array[2];
+	document.getElementById("roadname").value = array[3];
+	document.getElementById("roadnumber").value = array[4];
+	document.getElementById("suburb").value = array[5];
+	document.getElementById("postcode").value = array[6];
+	document.getElementById("country").value = array[7];
+	//TODO
+	//document.getElementById("button_ok").disabled = "enabled";
+}
+
+function update_client(){
+	
+	// TODO DO BETTER CHECK HERE
+	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
+	if(document.getElementById("name").value=="" || document.getElementById("vatnum").value == "" || document.getElementById("roadname").value==""){
+		alert("Please fill Name, VAT and road fields");
+		document.getElementById("loading").innerHTML= "";
+		return;
+	}
+	/* Check that numbers are numbers */
+	
+	if(!is_num(document.getElementById("postcode").value) || !is_num(document.getElementById("roadnumber").value)){
+		document.getElementById("loading").innerHTML = "";
+		return;
+	}
+	
+	var xmlHttp=GetXmlHttpObject();
+	var url="updates/client_update.php";
+	var parameters = "name=" + encodeURI(document.getElementById("name").value) +"&surname=" + 
+		encodeURI(document.getElementById("surname").value)+"&vat=" + encodeURI(document.getElementById("vatnum").value)+
+		"&roadname=" + encodeURI(document.getElementById("roadname").value)+"&roadnum=" + 
+		encodeURI(document.getElementById("roadnumber").value)+"&town=" + encodeURI(document.getElementById("suburb").value)+
+		"&code=" + encodeURI(document.getElementById("postcode").value)+"&country=" +
+	   	encodeURI(document.getElementById("country").value);
+	xmlHttp.open('POST', url, false);
+	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlHttp.setRequestHeader("Content-length", parameters.length);
+	xmlHttp.setRequestHeader("Connection", "close");
+	xmlHttp.send(parameters);
+	
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+    	document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
+		show("#screen_body");
+		return;
+	}
+
+}

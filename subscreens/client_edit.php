@@ -4,10 +4,8 @@
 <legend> Choose a client </legend>
 	<?php
 		include("../lists/client_list.php");	
-
 	?>
 </fieldset>
-
 
 <fieldset>
 <legend> Personnal info</legend> 
@@ -22,7 +20,7 @@
 </li>   
 <li>   
 <label for="">VAT number</label>   
-<input id="vatnum" name="vatnum" class="text" type="text" onblur="javascript:check_numvat(this.value);"/>
+<input id="vatnum" name="vatnum" readonly="readonly" class="text" type="text"/>
 <span id="available"></span>
 </li>   
 </ol>
@@ -60,7 +58,7 @@ type="text" />
 </li>   
 </ol>   
 </fieldset>
-<input type="button" value="Submit" onclick="javascript:add_clients();"/>
+<input type="button" id="button_ok"  value="Submit" onclick="javascript:update_client();"/>
 <div id="loading"></div>
 </fieldset>
 
