@@ -1,10 +1,10 @@
 <?php
 	include("../utils/database_connection.php");
-	$vatnum = $_GET['vatnum'];
+	$ref = $_GET['ref'];
 	database_connect();
 	
-	$check = "SELECT NUMTVA from Identite where NumTVA = '$vatnum'";
+	$check = "SELECT RefInterne from TypeProduit  where RefInterne = '$ref'";
 	$result = database_query($check);
 	if($result->rowCount()>0)
-		echo "Num VAT already existing";
+		echo "Ref already existing";
 ?>

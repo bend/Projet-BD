@@ -3,7 +3,8 @@
 <ol>
 <li>   
 <label for="InternalRef">Internal ref:</label>   
-<input id="ref" name="ref" class="text" type="text" />   
+<input id="ref" name="ref" class="text" type="text" onblur="javascript:check_ref(this.value);"/>   
+<span id="available"></span>
 </li>   
 <li>   
 <label for="Brand">Brand</label>   
@@ -21,27 +22,41 @@
 type="text" />   
 </li>   
 <li>   
-<label for="">Road number</label>   
-<input id="roadnumber" name="roadnumber" class="text"   
-type="text" />   
+<label for="">Contenance</label>   
+<input id="contenance" name="contenance" class="text"   
+type="text" onblur="javascript:check_isnum(this.value,'cont_ok');"/>   
+<span id="cont_ok"></span>
 </li>   
 <li>   
-<label for="suburb">Suburb/Town:</label>   
-<input id="suburb" name="suburb" class="text"   
-type="text" />   
+<label for="barcode	">BarCode</label>   
+<input id="barcode" name="barcode" class="text"   
+type="text" onblur="javascript:check_isnum(this.value,'bar_ok');"/>   
+<span id="bar_ok"></span>
 </li>   
 <li>   
-<label for="postcode">Postcode:</label>   
-<input id="postcode" name="postcode"   
-class="text textSmall" type="text" />   
+<label for="sellprice">Selling Price</label>   
+<input id="sellprice" name="sellprice"   
+class="text text" type="text"  onblur="javascript:check_isnum(this.value,'sp_ok');" />   
+<span id="sp_ok"></span>
 </li>  
-  
 <li>   
-<label for="country">Country:</label>   
-<input id="country" name="country" class="text"   
-type="text" />   
+<label for="buyprice">Buying Price</label>   
+<input id="buyprice" name="buyprice" class="text"   
+type="text" onblur="javascript:check_isnum(this.value,'bp_ok');" />   
+<span id="bp_ok"></span>
 </li>   
-<input type="button" value="Submit"/>
+<li>   
+<label for="vatrate">VAT Rate</label>   
+<input id="vatrate" name="vatrate" class="text"   
+type="text" onblur="javascript:check_isnum(this.value,'vat_ok');" />   
+<span id="vat_ok"></span>
+</li>   
+<li>   
+<label for="imgpath">Path To Image</label>   
+<input id="imgpath" name="imgpath" class="text"   
+</li>   
+<input type="button" value="Submit" onclick="javascript:add_product();"/>
+<div id="loading"></div>
 </fieldset>
 </ol>   
 
