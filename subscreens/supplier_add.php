@@ -1,7 +1,7 @@
 <fieldset>
-<legend>Add new supplier</legend>
+<legend>Add new Supplier</legend>
 <fieldset>
-<legend> Info</legend> 
+<legend> Personnal info</legend> 
 <ol>   
 <li>   
 <label for="name">Name:</label>   
@@ -12,9 +12,9 @@
 <input id="surname" name="surname" class="text" type="text" />   
 </li>   
 <li>   
-<label for="">Bankruptcy</label>   
-<input id="banckrupt" name="banckrupt" class="text" type="radio" />True  
-<input id="banckrupt" name="banckrupt" class="text" type="radio" />False
+<label for="">VAT number</label>   
+<input id="vatnum" name="vatnum" class="text" type="text" onblur="javascript:check_numvat(this.value);"/>
+<span id="available"></span>
 </li>   
 </ol>
 </fieldset>   
@@ -29,7 +29,8 @@ type="text" />
 <li>   
 <label for="RoadNumber">Road number</label>   
 <input id="roadnumber" name="roadnumber" class="text"   
-type="text" />   
+type="text" onblur="javascript:check_isnum(this.value,'road_num_ok');"/>   
+<span id="road_num_ok"></span>
 </li>   
 <li>   
 <label for="suburb">Suburb/Town:</label>   
@@ -39,7 +40,8 @@ type="text" />
 <li>   
 <label for="postcode">Postcode:</label>   
 <input id="postcode" name="postcode"   
-class="text textSmall" type="text" />   
+class="text textSmall" type="text"  onblur="javascript:check_isnum(this.value,'post_code_ok');"/>   
+<span id="post_code_ok"></span>
 </li>  
   
 <li>   
@@ -48,7 +50,8 @@ class="text textSmall" type="text" />
 type="text" />   
 </li>   
 </ol>   
-</fieldset>   
-<input type="button" value="Submit"/>
+</fieldset>
+<input type="button" value="Submit" onclick="javascript:add_supplier();"/>
+<div id="loading"></div>
 </fieldset>
 
