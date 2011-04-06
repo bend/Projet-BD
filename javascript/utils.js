@@ -424,6 +424,48 @@ function update_client(){
 	}
 
 }
+
+
+function update_supplier(){
+	
+	// TODO DO BETTER CHECK HERE
+	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
+	if(document.getElementById("name").value=="" || document.getElementById("vatnum").value == "" || document.getElementById("roadname").value==""){
+		alert("Please fill Name, VAT and road fields");
+		document.getElementById("loading").innerHTML= "";
+		return;
+	}
+	/* Check that numbers are numbers */
+	
+	if(!is_num(document.getElementById("postcode").value) || !is_num(document.getElementById("roadnumber").value)){
+		document.getElementById("loading").innerHTML = "";
+		return;
+	}
+	
+	var xmlHttp=GetXmlHttpObject();
+	var url="updates/supplier_update.php";
+	var parameters = "name=" + encodeURI(document.getElementById("name").value) +"&surname=" + 
+		encodeURI(document.getElementById("surname").value)+"&vat=" + encodeURI(document.getElementById("vatnum").value)+
+		"&roadname=" + encodeURI(document.getElementById("roadname").value)+"&roadnum=" + 
+		encodeURI(document.getElementById("roadnumber").value)+"&town=" + encodeURI(document.getElementById("suburb").value)+
+		"&code=" + encodeURI(document.getElementById("postcode").value)+"&country=" +
+	   	encodeURI(document.getElementById("country").value);
+	xmlHttp.open('POST', url, false);
+	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlHttp.setRequestHeader("Content-length", parameters.length);
+	xmlHttp.setRequestHeader("Connection", "close");
+	xmlHttp.send(parameters);
+	
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+    	document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
+		show("#screen_body");
+		return;
+	}
+
+}
+
+
+
 function update_product(){
 	// TODO DO BETTER CHECK HERE
 	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
