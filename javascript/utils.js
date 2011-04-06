@@ -408,6 +408,7 @@ function load_product(ref){
 	document.getElementById("buyprice").value = array[7];
 	document.getElementById("vatrate").value = array[8];
 	document.getElementById("imgpath").value = array[9];
+	document.getElementById("imgpath").src = array[9];
 	document.getElementById("loading").innerHTML="";
 	
 	document.getElementById("button_ok").disabled = false;
