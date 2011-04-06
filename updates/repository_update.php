@@ -8,8 +8,8 @@
 	$country=$_POST['country'];
 
 	database_connect();
-	$query = "INSERT INTO STOCK.Entrepot(Nom, Rue, Numero, Localite, CodePostal, Pays) VALUES('$name' ,'$roadname', '$roadnum', '$town', '$pcode', '$country')";
+	$query = "UPDATE STOCK.Entrepot SET Rue='$roadname', Numero='$roadnum', Localite='$town', CodePostal='$pcode', Pays='$country' WHERE Nom='$name'";
 	database_edit($query);
 	//TODO ADD BETTER VISUAL
-	echo "Repository added";
+	echo "Repository updated";
 ?>
