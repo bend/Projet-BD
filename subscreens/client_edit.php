@@ -1,5 +1,5 @@
 <fieldset>
-<legend>Edit new client</legend>
+<legend>Edit a client</legend>
 <fieldset>
 <legend> Choose a client </legend>
 	<?php
@@ -58,7 +58,7 @@ type="text" />
 </li>   
 </ol>   
 </fieldset>
-<input type="button" id="button_ok"  value="Submit" onclick="javascript:update_client();"/>
+<input type="button" id="button_ok" disabled="true" value="Submit" onclick="javascript:update_client();"/>
 <div id="loading"></div>
 </fieldset>
 
