@@ -558,3 +558,9 @@ function update_repository(){
 	}
 }
 
+
+function load_pro(ref){
+	load_subscreen('subscreens/product_view.php');
+	load_product(ref);
+}
+
