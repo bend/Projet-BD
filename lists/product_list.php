@@ -5,10 +5,11 @@
 	$res = database_query($query);
 	echo '<FORM>';
 	echo '<SELECT name="nom" size="1" onChange="javascript:load_product(this.value);">';
-	echo '<OPTION>-----';
+	echo '<option selected>-----</option>';
 	while($row = $res->fetch()) { 
-	 	echo '<OPTION>';	
-		echo $row['RefInterne'];    
+	 	echo '<option>';	
+		echo $row['RefInterne'];
+	  	echo '</option>';	
 	}
 	echo '</SELECT>';
 	echo '</FORM>';

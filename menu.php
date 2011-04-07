@@ -51,6 +51,14 @@
 			<img src="img/bar.png" alt="clic"/>
 		</div>
 	</div>
+	<div id="menu_pack">
+		<div id="menu_button">
+			<a href="transactions.php" >Transactions</a>
+		</div>
+		<div id="menu_separator">
+			<img src="img/bar.png" alt="clic"/>
+		</div>
+	</div>
 </div>
 <form method="post" action="search_all.php">
 	<div id="search_field">
