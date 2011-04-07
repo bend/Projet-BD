@@ -151,6 +151,11 @@
 	color: black;
 }
 
+#product_search img{
+	float:right;
+
+}
+
 #footer{
 	width:100%;
 	height:50px;

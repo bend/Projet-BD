@@ -13,18 +13,21 @@
 		$res1 = database_query($query_1);
 		while($row = $res1->fetch()) {
 			echo '<div id="product_search">';
-			echo '<a href="javascript:;" onclick="javascript:load_pro(';
-			echo $row['RefInterne'];
-			echo ');" >';
-			echo 'Ref: ';
-			echo $row['RefInterne'];
-			echo '<br/>';
-			echo 'Brand: ';
-			echo $row['Marque'];
-			echo '<br/>';
-			echo 'Denomination: ';
-			echo $row['Denomination'];
-			echo '</a><br/>';
+				echo '<a href="javascript:;" onclick="javascript:load_pro(';
+				echo $row['RefInterne'];
+				echo ');" >';
+				echo 'Ref: ';
+				echo $row['RefInterne'];
+				echo '<br/>';
+				echo 'Brand: ';
+				echo $row['Marque'];
+				echo '<br/>';
+				echo 'Denomination: ';
+				echo $row['Denomination'];
+				echo '</a>';
+				echo '<img width="100" heigth="100"  src="';
+				echo $row['Img'];
+				echo'"/>';
 			echo '</div>';
 		}
 
