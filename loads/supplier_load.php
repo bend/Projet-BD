@@ -2,14 +2,14 @@
 	include("../utils/database_connection.php");
 	$vatnum = $_GET['vatnum'];
 	database_connect();
-	
+
 	$query = "SELECT * from Identite where NumTVA = '$vatnum'";
-	$query2 = "SELECT * from Client where NumTVA = '$vatnul'";
+	$query2 = "SELECT * from Fournisseur where NumTVA = '$vatnum'";
 	$res = database_query($query);
 	$res2 = database_query($query2);
-
 	$row = $res->fetch();
 	$row2 = $res2->fetch();
+	
 	echo $row['Nom'];
 	echo '#@%';
 	echo $row['Prenom'];
@@ -26,7 +26,7 @@
 	echo '#@%';
 	echo $row['Pays'];
 	echo '#@%';
-	echo $row2['DateDernierAchat'];
+	echo $row2['Faillite'];
 	echo '#@%';
 ?>
 

@@ -340,7 +340,7 @@ function load_client(numtva){
         alert ("Browser does not support HTTP Request");
         return;
     }
-    var url="loads/client_load.php";
+    var url="loads/supplier_load.php";
     url=url+"?vatnum="+numtva;
     xmlHttp.open("GET",url,false);
     xmlHttp.send(null);
@@ -355,8 +355,41 @@ function load_client(numtva){
 	document.getElementById("suburb").value = array[5];
 	document.getElementById("postcode").value = array[6];
 	document.getElementById("country").value = array[7];
+	document.getElementById("date_last_buy").value = array[8];
 	document.getElementById("loading").innerHTML="";
 	
+	document.getElementById("button_ok").disabled = false;
+}
+
+
+function load_supplier(numtva){
+	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
+    xmlHttp=GetXmlHttpObject();
+    if (xmlHttp==null){
+        alert ("Browser does not support HTTP Request");
+        return;
+    }
+    var url="loads/supplier_load.php";
+    url=url+"?vatnum="+numtva;
+    xmlHttp.open("GET",url,false);
+    xmlHttp.send(null);
+	var resp = xmlHttp.responseText;
+	var array = resp.split("#@%");
+	
+	document.getElementById("name").value = array[0];
+	document.getElementById("surname").value = array[1];
+	document.getElementById("vatnum").value = array[2];
+	document.getElementById("roadname").value = array[3];
+	document.getElementById("roadnumber").value = array[4];
+	document.getElementById("suburb").value = array[5];
+	document.getElementById("postcode").value = array[6];
+	document.getElementById("country").value = array[7];
+	if(array[8] == "0")
+		document.getElementById("banckrupt").value = "NO";
+	else
+		document.getElementById("banckrupt").value = "YES";
+
+	document.getElementById("loading").innerHTML="";
 	document.getElementById("button_ok").disabled = false;
 }
 
@@ -468,6 +501,16 @@ function update_supplier(){
 		document.getElementById("loading").innerHTML = "";
 		return;
 	}
+	//Translate the Banckrupcy value
+	var banckrupt=0;
+	if(document.getElementById("banckrupt").value == 'YES')
+		banckrupt=1;
+	else if(document.getElementById("banckrupt").value =='NO' || document.getElementById("banckrupt").value =="" )
+		banckrupt=0;
+	else{
+		document.getElementById("loading").innerHTML= "";
+		return;
+	}
 	
 	var xmlHttp=GetXmlHttpObject();
 	var url="updates/supplier_update.php";
@@ -476,7 +519,7 @@ function update_supplier(){
 		"&roadname=" + encodeURI(document.getElementById("roadname").value)+"&roadnum=" + 
 		encodeURI(document.getElementById("roadnumber").value)+"&town=" + encodeURI(document.getElementById("suburb").value)+
 		"&code=" + encodeURI(document.getElementById("postcode").value)+"&country=" +
-	   	encodeURI(document.getElementById("country").value);
+	   	encodeURI(document.getElementById("country").value)+"&banckrupt="+encodeURI(banckrupt); 
 	xmlHttp.open('POST', url, false);
 	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlHttp.setRequestHeader("Content-length", parameters.length);
@@ -564,3 +607,12 @@ function load_pro(ref){
 	load_product(ref);
 }
 
+
+function check_isbool(val,id){
+	if(val != "YES" &&  val !="NO" &&val!=""){
+		document.getElementById(id).innerHTML= "Please enter YES or NO";
+		show('#'+id);
+	}
+	else document.getElementById(id).innerHTML = "";
+	return;
+}

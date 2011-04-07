@@ -51,10 +51,14 @@ class="text textSmall" type="text"  onblur="javascript:check_isnum(this.value,'p
   
 <li>   
 <label for="country">Country:</label>   
-<input id="country" name="country" class="text"   
+<input id="country" name="country" class="text"
 type="text" />   
 </li>   
-</ol>   
+<label for="banckrupt">Banckruptcy</label>   
+<input id="banckrupt" name="banckrupt" class="text" onblur="javascript:check_isbool(this.value,'banckrupt_ok');" type="text" />   
+<span id="banckrupt_ok"></span>
+</li>  
+</ol>
 </fieldset>
 <input type="button" id="button_ok" disabled="true" value="Submit" onclick="javascript:update_supplier();"/>
 <div id="loading"></div>

@@ -50,8 +50,7 @@ type="text" readonly="readonly"/>
 <label for="vatrate">VAT Rate</label>   
 <input id="vatrate" name="vatrate" class="text"   
 type="text" readonly="readonly" />   
-<span id="vat_ok"></span>
-</li>   
+</li>
 <li>   
 <label for="imgpath">Image</label>   
 <img id="imgpath"   name="imgpath"  onerror="javascript:this.src='img/empty.png'";" width="200" heigth="200" class="text" alt="" />

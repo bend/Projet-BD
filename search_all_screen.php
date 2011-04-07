@@ -13,6 +13,9 @@
 		$res1 = database_query($query_1);
 		while($row = $res1->fetch()) {
 			echo '<div id="product_search">';
+				echo '<img width="100" heigth="100"  src="';
+				echo $row['Img'];
+				echo'"/>';
 				echo '<a href="javascript:;" onclick="javascript:load_pro(';
 				echo $row['RefInterne'];
 				echo ');" >';
@@ -25,9 +28,7 @@
 				echo 'Denomination: ';
 				echo $row['Denomination'];
 				echo '</a>';
-				echo '<img width="100" heigth="100"  src="';
-				echo $row['Img'];
-				echo'"/>';
+				echo '<br/>';
 			echo '</div>';
 		}
 

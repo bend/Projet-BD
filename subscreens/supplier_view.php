@@ -51,6 +51,11 @@ class="text textSmall" type="text" readonly="true"/>
 <input id="country" readonly="true" name="country" class="text"   
 type="text" />   
 </li>   
+<li>   
+<label for="banckrupt">Banckrupcy</label>   
+<input id="banckrupt" readonly="true" name="banckrupt" class="text"   
+type="text" />   
+</li>   
 </ol>   
 </fieldset>
 <div id="loading"></div>

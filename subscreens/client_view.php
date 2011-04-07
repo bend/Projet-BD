@@ -53,6 +53,11 @@ class="text" type="text"  readonly="readonly" />
 <input id="country" readonly="readonly" name="country" class="text"   
 type="text" />   
 </li>   
+<li>   
+<label for="date_last_buy">Last purchase date</label>   
+<input id="date_last_buy" readonly="readonly" name="date_last_buy" class="text"   
+type="text" />   
+</li>   
 </ol>   
 </fieldset>
 <div id="loading"></div>
