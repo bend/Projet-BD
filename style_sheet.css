@@ -138,6 +138,7 @@
 #product_search{
 	margin-top:3px;
 	padding:3px;
+	min-height:106px;
 	border:solid 1px white;
 
 }
@@ -153,7 +154,6 @@
 
 #product_search img{
 	float:right;
-
 }
 
 #footer{
