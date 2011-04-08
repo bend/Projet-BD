@@ -3,6 +3,7 @@
 <fieldset>
 <legend> Choose a product </legend>
 	<?php
+		include("../utils/database_connection.php");
 		include("../lists/product_list.php");	
 	?>
 </fieldset>

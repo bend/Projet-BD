@@ -1,5 +1,4 @@
 <?php
-	include("../utils/database_connection.php");
 	$query = "SELECT Nom FROM Entrepot";
 	database_connect();
 	$res = database_query($query);

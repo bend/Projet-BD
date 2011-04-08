@@ -3,6 +3,7 @@
 <fieldset>
 <legend> Choose a supplier </legend>
 	<?php
+		include("../utils/database_connection.php");
 		include("../lists/supplier_list.php");	
 	?>
 </fieldset>

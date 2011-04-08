@@ -3,6 +3,7 @@
 <fieldset>
 <legend> Choose a repository </legend>
 	<?php
+		include("../utils/database_connection.php");
 		include("../lists/repository_list.php");	
 	?>
 </fieldset>

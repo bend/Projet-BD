@@ -1,5 +1,4 @@
 <?php
-	include("../utils/database_connection.php");
 	$query = " SELECT RefInterne FROM TypeProduit";
 	database_connect();
 	$res = database_query($query);

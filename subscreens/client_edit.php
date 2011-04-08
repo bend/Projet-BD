@@ -3,6 +3,7 @@
 <fieldset>
 <legend> Choose a client </legend>
 	<?php
+		include("../utils/database_connection.php");
 		include("../lists/client_list.php");	
 	?>
 </fieldset>
