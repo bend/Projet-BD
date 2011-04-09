@@ -3,7 +3,7 @@
 	database_connect();
 	$res = database_query($query);
 	echo '<FORM>';
-	echo '<SELECT name="nom" size="1" onChange="javascript:load_repository(this.value);">';
+	echo '<SELECT name="repository_list" id="repository_list" size="1">';
 	echo '<option>-----</option>';
 	while($row = $res->fetch()) { 
 	 	echo '<option>';	

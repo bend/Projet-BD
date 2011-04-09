@@ -8,7 +8,7 @@
 	$country=$_POST['country'];
 
 	database_connect();
-	$query = "INSERT INTO STOCK.Entrepot(Nom, Rue, Numero, Localite, CodePostal, Pays) VALUES('$name' ,'$roadname', '$roadnum', '$town', '$pcode', '$country')";
+	$query = "INSERT INTO STOCK.Entrepot(NomE, Rue, Numero, Localite, CodePostal, Pays) VALUES('$name' ,'$roadname', '$roadnum', '$town', '$pcode', '$country')";
 	database_edit($query);
 	//TODO ADD BETTER VISUAL
 	echo "Repository added";

@@ -57,6 +57,10 @@ class="text" type="text"  onblur="javascript:check_isnum(this.value,'post_code_o
 <input id="country" name="country" class="text"   
 type="text" />   
 </li>   
+<li>   
+<input id="date_last_buy" name="date_last_buy"  class="text"   
+type="hidden" />   
+</li>   
 </ol>   
 </fieldset>
 <input type="button" id="button_ok" disabled="true" value="Submit" onclick="javascript:update_client();"/>

@@ -36,6 +36,11 @@ function database_edit($query){
 	}
 }
 
+function database_getlast_inserted_id(){
+	global $bdd;
+	return $bdd->lastInsertId();
+}
+
 
 /*database_connect();
 echo 'ok';

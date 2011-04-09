@@ -616,3 +616,49 @@ function check_isbool(val,id){
 	else document.getElementById(id).innerHTML = "";
 	return;
 }
+
+
+function transaction_buy(){
+	// TODO DO BETTER CHECK HERE
+	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
+	if(document.getElementById("supplier_list").value=="-----" || document.getElementById("product_list").value == "-----" || document.getElementById("repository_list").value=="-----"){
+		alert("Please select a supplier, a repository and a product");
+		document.getElementById("loading").innerHTML= "";
+		return;
+	}
+	/* Check that numbers are numbers */
+	
+	if(!is_num(document.getElementById("quantity").value) || document.getElementById("quantity").value=="" ){
+		document.getElementById("loading").innerHTML = "";
+		alert("Please set a right quantity");
+		return;
+	}
+	
+	
+	var xmlHttp=GetXmlHttpObject();
+	var url="registration/register_transaction_buy.php";
+	var parameters = "product=" + encodeURI(document.getElementById("product_list").value) +"&supplier=" + 
+		encodeURI(document.getElementById("supplier_list").value)+"&repo=" + encodeURI(document.getElementById("repository_list").value)+
+		"&quantity=" + encodeURI(document.getElementById("quantity").value);
+	xmlHttp.open('POST', url, false);
+	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlHttp.setRequestHeader("Content-length", parameters.length);
+	xmlHttp.setRequestHeader("Connection", "close");
+	xmlHttp.send(parameters);
+	
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+    	document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
+		show("#screen_body");
+		return;
+	}
+}
+
+
+
+
+
+
+
+
+
+

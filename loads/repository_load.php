@@ -3,10 +3,10 @@
 	$name = $_GET['name'];
 	database_connect();
 
-	$query = "SELECT * from Entrepot  where Nom = '$name'";
+	$query = "SELECT * from Entrepot  where NomE = '$name'";
 	$res = database_query($query);
 	$row = $res->fetch();
-	echo $row['Nom'];
+	echo $row['NomE'];
 	echo '#@%';
 	echo $row['Rue'];
 	echo '#@%';

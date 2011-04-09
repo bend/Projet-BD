@@ -6,12 +6,13 @@
 <li>
 <?php
 	include("../utils/database_connection.php");
-	include("../lists/product_list.php");
+	include("../lists/product_list_noload.php");
 ?>
 </li>   
 <li>   
 <label for="Quantity">Quantity</label>   
-<input id="quantity" name="quantity" class="text" type="text" />   
+<input id="quantity" name="quantity" class="text" type="text" onblur="javascript:check_isnum(this.value,'quantity_ok');"/>   
+<span id="quantity_ok"></span>
 </li>   
 </ol>
 </fieldset>   
@@ -20,7 +21,7 @@
 <ol>   
 <li>
 <?php
-	include("../lists/supplier_list.php");
+	include("../lists/supplier_list_noload.php");
 ?>	
 </li>
 </ol>
@@ -30,7 +31,7 @@
 <ol>   
 <li>
 <?php
-	include("../lists/repository_list.php");
+	include("../lists/repository_list_noload.php");
 ?>
 </ol>
 </fieldset>
