@@ -61,7 +61,7 @@ function add_supplier(){
 		document.getElementById("loading").innerHTML= "";
         return;
     }
-    var url="checks/check_num_vat_bool.php";
+    var url="checks/check_num_vat_supplier_bool.php";
     url=url+"?vatnum="+document.getElementById("vatnum").value;
     xmlHttp.open("GET",url,false);
     xmlHttp.send(null);
@@ -117,7 +117,7 @@ function add_clients(){
 		document.getElementById("loading").innerHTML= "";
         return;
     }
-    var url="checks/check_num_vat_bool.php";
+    var url="checks/check_num_vat_client_bool.php";
     url=url+"?vatnum="+document.getElementById("vatnum").value;
     xmlHttp.open("GET",url,false);
     xmlHttp.send(null);
@@ -275,7 +275,7 @@ function check_ref(str){
 	}
 } 
 
-function check_numvat(str){
+function check_numvat_client(str){
     if (str.length==0){
         document.getElementById("available").innerHTML="";
 		show("#available");
@@ -286,7 +286,7 @@ function check_numvat(str){
         alert ("Browser does not support HTTP Request");
         return;
     }
-    var url="checks/check_num_vat.php";
+    var url="checks/check_num_vat_client.php";
     url=url+"?vatnum="+str;
     xmlHttp.open("GET",url,false);
     xmlHttp.send(null);
@@ -296,6 +296,31 @@ function check_numvat(str){
 		return;
 	}
 } 
+
+
+function check_numvat_supplier(str){
+    if (str.length==0){
+        document.getElementById("available").innerHTML="";
+		show("#available");
+        return;
+    }
+    xmlHttp=GetXmlHttpObject();
+    if (xmlHttp==null){
+        alert ("Browser does not support HTTP Request");
+        return;
+    }
+    var url="checks/check_num_vat_supplier.php";
+    url=url+"?vatnum="+str;
+    xmlHttp.open("GET",url,false);
+    xmlHttp.send(null);
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+    	document.getElementById("available").innerHTML=xmlHttp.responseText;
+		show("#available");
+		return;
+	}
+}
+
+
 
 function check_isnum(str, id){
 	if(!is_num(str)){
@@ -603,6 +628,7 @@ function update_repository(){
 
 
 function load_pro(ref){
+	alert("test");
 	load_subscreen('subscreens/product_view.php');
 	load_product(ref);
 }
@@ -652,13 +678,5 @@ function transaction_buy(){
 		return;
 	}
 }
-
-
-
-
-
-
-
-
 
 

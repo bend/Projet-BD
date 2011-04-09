@@ -3,8 +3,8 @@
 	$vatnum = $_GET['vatnum'];
 	database_connect();
 	
-	$check = "SELECT NUMTVA from Identite where NumTVA = '$vatnum'";
+	$check = "SELECT NUMTVA from Client  where NumTVA = '$vatnum'";
 	$result = database_query($check);
 	if($result->rowCount()>0)
-		echo "Num VAT already existing";
+		echo "Num VAT already existing in clients";
 ?>

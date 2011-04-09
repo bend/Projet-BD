@@ -10,9 +10,17 @@
 	$country=$_POST['country'];
 
 	database_connect();
-	$query = "INSERT INTO STOCK.Identite(NumTVA,Nom,Prenom,DateAjout, Rue, Numero, Localite, CodePostal, Pays) VALUES('$vatnum','$name','$surname',CURDATE(), '$roadname', '$roadnum', '$town', '$pcode', '$country')";
+
+	$check = "SELECT * FROM Identite Where NumVAT='$vatnum'";
+
+	$res=database_query($check);
+
+	if($res==0){
+		$query = "INSERT INTO STOCK.Identite(NumTVA,Nom,Prenom,DateAjout, Rue, Numero, Localite, CodePostal, Pays) VALUES('$vatnum','$name','$surname',CURDATE(), '$roadname', '$roadnum', '$town', '$pcode', '$country')";
+		database_edit($query);
+	}
+
 	$query2 = "INSERT INTO STOCK.Fournisseur(NumTVA) VALUES('$vatnum')";
-	database_edit($query);
 	database_edit($query2);
 	//TODO ADD BETTER VISUAL
 	echo "Supplier added";

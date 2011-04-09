@@ -13,7 +13,7 @@
 </li>   
 <li>   
 <label for="">VAT number</label>   
-<input id="vatnum" name="vatnum" class="text" type="text" onblur="javascript:check_numvat(this.value);"/>
+<input id="vatnum" name="vatnum" class="text" type="text" onblur="javascript:check_numvat_client(this.value);"/>
 <span id="available"></span>
 </li>   
 </ol>
