@@ -1,4 +1,5 @@
 
+
 function show(balise){
 	 $(balise).hide();
 	 $(balise).fadeIn(500);
@@ -61,7 +62,7 @@ function add_supplier(){
 		document.getElementById("loading").innerHTML= "";
         return;
     }
-    var url="checks/check_num_vat_supplier_bool.php";
+    var url="checks/check_num_vat_bool_supplier.php";
     url=url+"?vatnum="+document.getElementById("vatnum").value;
     xmlHttp.open("GET",url,false);
     xmlHttp.send(null);
@@ -117,7 +118,7 @@ function add_clients(){
 		document.getElementById("loading").innerHTML= "";
         return;
     }
-    var url="checks/check_num_vat_client_bool.php";
+    var url="checks/check_num_vat_bool_client.php";
     url=url+"?vatnum="+document.getElementById("vatnum").value;
     xmlHttp.open("GET",url,false);
     xmlHttp.send(null);
@@ -293,10 +294,34 @@ function check_numvat_client(str){
     if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
     	document.getElementById("available").innerHTML=xmlHttp.responseText;
 		show("#available");
+		var temp = xmlHttp.responseText;
+		if(check_vat_both(str)==true && temp=="")
+			load_client(document.getElementById("vatnum").value);
 		return;
 	}
-} 
+}
 
+function check_vat_both(str){
+
+    var url="checks/check_num_vat_bool_client.php";
+    url=url+"?vatnum="+str;
+    xmlHttp.open("GET",url,false);
+    xmlHttp.send(null);
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		if(xmlHttp.responseText ==true)
+			return true;
+	}
+
+    var url="checks/check_num_vat_bool_supplier.php";
+    url=url+"?vatnum="+str;
+    xmlHttp.open("GET",url,false);
+    xmlHttp.send(null);
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		if(xmlHttp.responseText == true)
+			return true;
+	}
+	return false;
+}
 
 function check_numvat_supplier(str){
     if (str.length==0){
@@ -316,6 +341,9 @@ function check_numvat_supplier(str){
     if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
     	document.getElementById("available").innerHTML=xmlHttp.responseText;
 		show("#available");
+		var temp = xmlHttp.responseText;
+		if(check_vat_both(str)==true && temp=="")
+			load_supplier(document.getElementById("vatnum").value);
 		return;
 	}
 }

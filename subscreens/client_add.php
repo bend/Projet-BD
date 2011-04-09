@@ -47,7 +47,8 @@ class="text" type="text"  onblur="javascript:check_isnum(this.value,'post_code_o
 <li>   
 <label for="country">Country:</label>   
 <input id="country" name="country" class="text"   
-type="text" />   
+type="text" />
+<input type="hidden" id="date_last_buy"/>
 </li>   
 </ol>   
 </fieldset>

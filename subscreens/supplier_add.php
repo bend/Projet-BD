@@ -47,7 +47,8 @@ class="text textSmall" type="text"  onblur="javascript:check_isnum(this.value,'p
 <li>   
 <label for="country">Country:</label>   
 <input id="country" name="country" class="text"   
-type="text" />   
+type="text" /> 
+<input type="hidden" id="banckrupt"/>
 </li>   
 </ol>   
 </fieldset>
