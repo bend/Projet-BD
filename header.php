@@ -16,6 +16,11 @@ session_start();
 		<script type="text/javascript" src="javascript/jquery-1.5.1.min.js"></script>
 		<script type="text/javascript" src="javascript/jquery.gmap-1.1.0.js"></script>
 		<script type="text/javascript" src="javascript/utils.js"></script>
+		<script type="text/javascript" src="javascript/utils_client.js"></script>
+		<script type="text/javascript" src="javascript/utils_supplier.js"></script>
+		<script type="text/javascript" src="javascript/utils_product.js"></script>
+		<script type="text/javascript" src="javascript/utils_repository.js"></script>
+		<script type="text/javascript" src="javascript/utils_transaction.js"></script>
     </head>
     <body>
         <div id="header">
