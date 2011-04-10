@@ -3,7 +3,7 @@
 	database_connect();
 	$res = database_query($query);
 	echo '<FORM>';
-	echo '<SELECT name="nom" id="client_list" size="1" onChange="javascript:load_client(this.value);">';
+	echo '<SELECT name="client_list" id="client_list" size="1" ">';
 	echo '<option>-----</option>';
 	while($row = $res->fetch()) { 
 	 	echo '<option>';	

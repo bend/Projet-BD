@@ -179,7 +179,11 @@ fieldset ol {
 }  
 fieldset li {   
 	padding-bottom: 1em;  
-}  
+}
+
+select {
+   width:100px;
+}   
 
 label {    
 	float: left;    

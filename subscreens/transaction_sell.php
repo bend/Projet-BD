@@ -1,41 +1,41 @@
 <fieldset>
-<legend>Buy a product</legend>
+<legend>Sell a product</legend>
 <fieldset>
 <legend>Choose a Product</legend> 
 <ol>   
 <li>
+<label for="Product">Product</label>
 <?php
 	include("../utils/database_connection.php");
-	include("../lists/product_list_noload.php");
+	include("../lists/product_list_load_union.php");
 ?>
-</li>   
-<li>   
-<label for="Quantity">Quantity</label>   
-<input id="quantity" name="quantity" class="text" type="text" onblur="javascript:check_isnum(this.value,'quantity_ok');"/>   
+<li>
+<label for="repo">Repository</label>
+<span id="repo"><select id=repo_list><option>-----</option></select></span>
+</li>
+<label for="Quantity">Quantity</label>
+<span id="quantity"><Select id="quantity_list"><option>-----</option></select></span>
 <span id="quantity_ok"></span>
+</li>
+<li>
+<input type="button" value="add"id="add" onclick="javascript:add_to_cart_sell();"/>
+<span id="add_ok"></span>
+<input type="hidden" id="cart"/>
+</fieldset>
 </li>   
 </ol>
 </fieldset>   
 <fieldset>   
-<legend>Choose a Supplier</legend>   
+<legend>Choose a Client</legend>   
 <ol>   
 <li>
 <?php
-	include("../lists/supplier_list_noload.php");
+	include("../lists/client_list_noload.php");
 ?>	
 </li>
 </ol>
 </fieldset>
-<fieldset>   
-<legend>Choose a Repository</legend>   
-<ol>   
-<li>
-<?php
-	include("../lists/repository_list_noload.php");
-?>
-</ol>
-</fieldset>
-<input type="button" value="Submit" onclick="javascript:transaction_buy();"/>
+<input type="button" value="Save Transaction" onclick="javascript:transaction_sell();"/>
 <div id="loading"></div>
 </fieldset>
 </fieldset>
