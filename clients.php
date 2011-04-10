@@ -5,7 +5,7 @@ include("header.php");
 ?>
         <div id="contents">
 		<?php
-        require("clients_screen.php");
+        require("screens/clients_screen.php");
         ?>
         </div>
 		<div id="footer">

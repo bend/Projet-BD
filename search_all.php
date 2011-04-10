@@ -4,7 +4,7 @@ include("header.php");
 ?>
         <div id="contents">
 		<?php
-        require("search_all_screen.php");
+        require("screens/search_all_screen.php");
         ?>
         </div>
 		<div id="footer">

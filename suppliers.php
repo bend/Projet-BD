@@ -4,7 +4,7 @@ include("header.php");
 ?>
         <div id="contents">
 		<?php
-        require("suppliers_screen.php");
+        require("screens/suppliers_screen.php");
         ?>
         </div>
 		<div id="footer">

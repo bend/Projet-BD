@@ -1,6 +1,6 @@
 <div id="sub_menu">
 	<?php
-		require("sub_menu_search_all.php");
+		require("sub_menu/sub_menu_search_all.php");
 	?>
 </div>
 <div id="screen_body">
