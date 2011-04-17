@@ -15,5 +15,7 @@ No Results Found
 </fieldset>
 <fieldset>
 <legend>Transaction</legend>
-<input type="text" />
+<div id="result_load">
+</div>
+<div id="loading2"></div>
 </fieldset>

@@ -156,6 +156,26 @@
 	float:right;
 }
 
+#result_found a{
+	color: white;
+	text-decoration:none;
+}
+
+#result_found a:hover
+{
+	color:black;
+}
+
+#result_load a{
+	color:white;
+	text-decoration:none;
+}
+
+#result_load a:hover
+{
+	color:black;
+}
+
 #footer{
 	width:100%;
 	height:50px;

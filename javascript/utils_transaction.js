@@ -131,6 +131,23 @@ function search_transaction(val){
 	document.getElementById("loading1").innerHTML="";
 }
 
+function load_transaction(val){
+	
+	document.getElementById("loading2").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
+	var xmlHttp=GetXmlHttpObject();
+	var url="loads/transaction_load.php";
+	var parameters = "val=" + encodeURI(val);
+	xmlHttp.open('POST', url, false);
+	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlHttp.setRequestHeader("Content-length", parameters.length);
+	xmlHttp.setRequestHeader("Connection", "close");
+	xmlHttp.send(parameters);
+	
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		document.getElementById("result_load").innerHTML=xmlHttp.responseText;
+	}
+	document.getElementById("loading2").innerHTML="";
 
 
 
+}
