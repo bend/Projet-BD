@@ -11,5 +11,4 @@
 		echo $row['CodePostal'];
 		echo $row['Pays'];
 	}
-
 ?>

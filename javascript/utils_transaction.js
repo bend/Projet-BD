@@ -105,3 +105,32 @@ function add_to_cart_sell(){
 	document.getElementById("quantity").innerHTML="<select id='quantity_list'><option>-----</option></select>";
 	document.getElementById("loading").innerHTML="";
 }
+
+function search_transaction(val){
+	document.getElementById("loading1").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
+	if(val=="Enter an id, VAT num or date"){
+		alert("Please enter a value");
+		document.getElementById("loading1").innerHTML= "";
+		return;
+	}
+	var xmlHttp=GetXmlHttpObject();
+	var url="lists/search_transactions.php";
+	var parameters = "val=" + encodeURI(val);
+	xmlHttp.open('POST', url, false);
+	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlHttp.setRequestHeader("Content-length", parameters.length);
+	xmlHttp.setRequestHeader("Connection", "close");
+	xmlHttp.send(parameters);
+	
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+    	document.getElementById("result_found").innerHTML=xmlHttp.responseText;
+		show("#result_found");
+		document.getElementById("loading1").innerHTML="";
+		return;
+	}
+	document.getElementById("loading1").innerHTML="";
+}
+
+
+
+
