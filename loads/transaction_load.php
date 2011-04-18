@@ -17,6 +17,7 @@
 	echo '<fieldset><legend>Transaction Details</legend>';
 	echo "Transaction ID: ";
 	echo $row['IdTran'];
+	//TODO ADD A LINK TO CLIENT
 	echo '<br/>VAT Number: ';
 	echo $row['NumTVA'];
 	echo '<br/>Date: ';

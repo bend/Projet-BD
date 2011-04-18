@@ -54,7 +54,7 @@ type="text" readonly="readonly" />
 </li>
 <li>   
 <label for="imgpath">Image</label>   
-<img id="imgpath"   name="imgpath"  onerror="javascript:this.src='img/empty.png'";" width="200" heigth="200" class="text" alt="" />
+<img id="imgpath"   name="imgpath"  onerror="javascript:this.src='img/empty.png';" width="200" heigth="200" class="text" alt="" />
 </li>   
 <div id="loading"></div>
 </fieldset>

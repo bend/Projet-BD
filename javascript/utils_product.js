@@ -7,7 +7,7 @@ function add_product(){
 		return;
 	}
 	/* Check that the numbers are numbers */
-	if(!is_num(document.getElementById("contenance").value) || !is_num(document.getElementById("barcode").value) || !is_num(document.getElementById("sellprice").value)   || !is_num(document.getElementById("buyprice").value) || !is_num(document.getElementById("vatrate").value) ){
+	if(!is_num(document.getElementById("ref").value) || !is_num(document.getElementById("contenance").value) || !is_num(document.getElementById("barcode").value) || !is_num(document.getElementById("sellprice").value)   || !is_num(document.getElementById("buyprice").value) || !is_num(document.getElementById("vatrate").value) ){
 		document.getElementById("loading").innerHTML = "";
 		return;
 	}
@@ -117,6 +117,11 @@ function check_ref(str){
 		show("#available");
         return;
     }
+	if(!is_num(str)){
+		document.getElementById("available").innerHTML="You must enter a number";
+		show("#available");
+		return;
+	}
     xmlHttp=GetXmlHttpObject();
     if (xmlHttp==null){
         alert ("Browser does not support HTTP Request");
@@ -144,7 +149,7 @@ function list_union_quantity(repo){
 	var xmlHttp=GetXmlHttpObject();
 	var url="lists/list_union_quantity.php";
 	var parameters = "product=" + encodeURI(document.getElementById("product_list").value) + 
-		"&repo="+encodeURI(document.getElementById("repo_list").value);
+		"&repo="+encodeURI(repo);
 	xmlHttp.open('POST', url, false);
 	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlHttp.setRequestHeader("Content-length", parameters.length);

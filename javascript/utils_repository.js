@@ -152,3 +152,60 @@ function check_repo_name(str){
 	}
 
 }
+
+function list_products_in_repo(){
+	var repo_name = document.getElementById("repository_list1").value;
+	var xmlHttp=GetXmlHttpObject();
+	var url="lists/list_union_repo_prod.php";
+	var parameters = "repo=" + encodeURI(repo_name);
+	xmlHttp.open('POST', url, false);
+	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlHttp.setRequestHeader("Content-length", parameters.length);
+	xmlHttp.setRequestHeader("Connection", "close");
+	xmlHttp.send(parameters);
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+    	document.getElementById("prodo").innerHTML=xmlHttp.responseText;
+		show("#prodo");
+	}
+	document.getElementById("loading").innerHTML="";
+
+}
+
+
+function transfert_stock(from, to, prod, quantity){
+	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
+	if(from=="-----" || to=="-----" || prod=="-----" || quantity=="-----"){
+		alert("Please select all the fields");
+		document.getElementById("loading").innerHTML= "";
+		return;
+	}
+	if(from==to){
+		alert("Cannot Transfert to same repo");
+		document.getElementById("loading").innerHTML= "";
+		return;
+	}
+	
+	var xmlHttp=GetXmlHttpObject();
+	var url="updates/update_move_stock.php";
+	var parameters = "from=" + encodeURI(from)+"&to="+encodeURI(to)+"&prod="+encodeURI(prod)+"&quantity="+ encodeURI(quantity);
+	xmlHttp.open('POST', url, false);
+	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlHttp.setRequestHeader("Content-length", parameters.length);
+	xmlHttp.setRequestHeader("Connection", "close");
+	xmlHttp.send(parameters);
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+    	document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
+		show("#screen_body");
+	}
+	document.getElementById("loading").innerHTML="";
+
+
+}
+
+
+
+
+
+
+
+
