@@ -124,6 +124,14 @@ function search_transaction(val){
 	
     if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
     	document.getElementById("result_found").innerHTML=xmlHttp.responseText;
+
+		$(document).ready(function() {
+		$("a#test").fancybox({
+		'overlayShow'	: true,
+		'transitionIn'	: 'elastic',
+		'transitionOut'	: 'elastic'
+		});
+		});
 		show("#result_found");
 		document.getElementById("loading1").innerHTML="";
 		return;

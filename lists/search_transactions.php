@@ -7,7 +7,10 @@
 	if($res->rowCount()==0)
 		echo 'No Results Found';
 	while($temp = $res->fetch()){
-		echo '<a href="javascript:;" onclick="javascript:load_transaction(';
+		echo '<a id="test" href="loads/transaction_load.php?val=';
+		echo $temp['IdTran'];
+		echo 'onclick="javascript:load_transaction(';
+
 		echo $temp['IdTran'];
 		echo ');">';
 		echo 'ID: ';

@@ -1,5 +1,5 @@
 <fieldset>
-<legend>Edit a product</legend>
+<legend>View a product</legend>
 <fieldset>
 <legend> Choose a product </legend>
 	<?php
@@ -54,7 +54,7 @@ type="text" readonly="readonly" />
 </li>
 <li>   
 <label for="imgpath">Image</label>
-<a class="zoom_img" id="zoom_img"  href="">
+<a id="zoom_img"  href="">
 <img id="imgpath"   name="imgpath"  onerror="javascript:this.src='img/empty.png';" width="200" heigth="200" class="text" alt="" />
 </a>
 </li>   

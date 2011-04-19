@@ -1,5 +1,5 @@
 <fieldset>
-<legend>Edit a supplier</legend>
+<legend>View a supplier</legend>
 <fieldset>
 <legend> Choose a supplier </legend>
 	<?php

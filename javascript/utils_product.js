@@ -141,6 +141,7 @@ function check_ref(str){
 
 
 function load_pro(ref){
+	$.fancybox.close();
 	load_subscreen('subscreens/product_view.php');
 	load_product(ref);
 }

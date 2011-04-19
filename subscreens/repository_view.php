@@ -1,5 +1,5 @@
 <fieldset>
-<legend>Edit a Repository</legend>
+<legend>View a Repository</legend>
 <fieldset>
 <legend> Choose a repository </legend>
 	<?php

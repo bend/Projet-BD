@@ -166,6 +166,10 @@
 	color:black;
 }
 
+#result_load{
+   background-color:RGB(109,109,109);
+   padding:3px;
+}
 #result_load a{
 	color:white;
 	text-decoration:none;

@@ -1,7 +1,7 @@
 
 <?php
 	include("../utils/database_connection.php");
-	$val = $_POST['val'];
+	$val = $_GET['val'];
 	database_connect();
 	$query = "SELECT * FROM Transaction WHERE idTran='$val'";
 	$query2 = "SELECT * FROM Composition WHERE idTran='$val'";
@@ -14,6 +14,7 @@
 	$row = $res->fetch();
 	$total = $res3->fetch();
 	
+	echo '<div id="result_load">';
 	echo '<fieldset><legend>Transaction Details</legend>';
 	echo "Transaction ID: ";
 	echo $row['IdTran'];
@@ -42,5 +43,6 @@
 		echo '</fieldset>';
 	}
 	echo '</fieldset>';
+	echo '</div>';
 ?>
 

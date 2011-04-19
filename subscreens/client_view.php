@@ -1,5 +1,5 @@
 <fieldset>
-<legend>Edit a client</legend>
+<legend>View a client</legend>
 <fieldset>
 <legend> Choose a client </legend>
 	<?php
