@@ -59,7 +59,8 @@ type="text" onblur="javascript:check_isnum(this.value,'vat_ok');" />
 <span id="vat_ok"></span>
 </li>   
 <li>   
-<label for="imgpath">Path To Image</label>   
+<label for="imgpath">Path To Image</label>  
+<a id="zoom_img" href="javascript:;" hidden="true"></a>
 <input id="imgpath" name="imgpath" class="text"   
 </li>   
 <input type="button" id="button_ok" disabled="true" value="Edit" onclick="javascript:update_product();"/>

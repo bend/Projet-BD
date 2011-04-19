@@ -13,9 +13,13 @@
 		$res1 = database_query($query_1);
 		while($row = $res1->fetch()) {
 			echo '<div id="product_search">';
-				echo '<img width="100" onerror="javascript:this.src=\'img/empty.png\';" heigth="100"  src="';
+				echo '<a id="zoom_img" href="';
+				echo $row['Img'];
+				echo '">';
+				echo '<img alt="click" width="100" onerror="javascript:this.src=\'img/empty.png\';" heigth="100"  src="';
 				echo $row['Img'];
 				echo'"/>';
+				echo'</a>';
 				echo '<a href="javascript:;" onclick="javascript:load_pro(';
 				echo $row['RefInterne'];
 				echo ');" >';
