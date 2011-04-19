@@ -184,6 +184,12 @@
 	background-color:RGB(109,109,109);
 }
 
+#map{
+	padding:1%;
+	width:98%;
+	height:600px;
+}
+
 fieldset {   
 	margin: 15px 15px 15px 15px;   
 	padding: 0;  

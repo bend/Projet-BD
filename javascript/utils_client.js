@@ -111,8 +111,6 @@ function load_client(numtva){
 
 
 function update_client(){
-	
-	// TODO DO BETTER CHECK HERE
 	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
 	if(document.getElementById("name").value=="" || document.getElementById("vatnum").value == "" || document.getElementById("roadname").value==""){
 		alert("Please fill Name, VAT and road fields");
@@ -147,3 +145,35 @@ function update_client(){
 	}
 
 }
+
+function load_client_addresses(){
+	load_subscreen("subscreens/client_localisation.php");
+	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
+	var xmlHttp=GetXmlHttpObject();
+	var parameters="";
+	var url="gmaps/client_addr_list.php";
+	xmlHttp.open('POST', url, false);
+	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlHttp.setRequestHeader("Content-length", parameters.length);
+	xmlHttp.setRequestHeader("Connection", "close");
+	xmlHttp.send(parameters);
+	
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		var resp = xmlHttp.responseText;
+		var array_addr = resp.split("#@%");
+		var mark = new Array();
+		for(i=0; i<array_addr.length-1;i+=2){
+			mark.push({address:array_addr[i+1], html:array_addr[i] +"<br/>"+ array_addr[i+1]});
+		}
+		var options ={
+			markers: mark,
+			zoom:5
+
+		};
+		$("#map").gMap(options);
+		show("#map");
+		document.getElementById("loading").innerHTML= "";
+		return;
+	}
+}
+
