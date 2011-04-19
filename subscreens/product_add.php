@@ -53,10 +53,9 @@ type="text" onblur="javascript:check_isnum(this.value,'vat_ok');" />
 </li>   
 <li>   
 <label for="imgpath">Path To Image</label>   
-<input id="imgpath" name="imgpath" class="text"   
+<input type="text" id="imgpath" name="imgpath" class="text"/>   
 </li>   
 <input type="button" value="Submit" onclick="javascript:add_product();"/>
 <div id="loading"></div>
 </fieldset>
 </ol>   
-
