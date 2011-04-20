@@ -54,7 +54,7 @@ type="text" readonly="readonly" />
 </li>
 <li>   
 <label for="imgpath">Image</label>
-<a id="zoom_img"  href="">
+<a id="zoom_img"  href="http://">
 <img id="imgpath"   name="imgpath"  onerror="javascript:this.src='img/empty.png';" width="200" heigth="200" class="text" alt="" />
 </a>
 </li>   

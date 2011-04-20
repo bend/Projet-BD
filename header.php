@@ -18,7 +18,11 @@
 		<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 		<script type="text/javascript" src="fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-
+<script type="text/javascript">
+	var detect = navigator.userAgent.toLowerCase();
+	//alert(detect.indexOf("safari"));
+	//TODO CHECK BROWSER COMPATIBYLITY
+</script>
 <script type="text/javascript">
 		$(document).ready(function() {
 		$("a#zoom_img").fancybox({

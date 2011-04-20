@@ -1,4 +1,11 @@
+body a{
+	color:white;
+}
 
+body a:hover
+{
+	color:black;
+}
 #header{
 	width: 100%;
 	height:122px;
@@ -180,6 +187,12 @@
 	color:black;
 }
 
+#prod_detail{
+	background-color:RGB(109,109,109);
+	padding:3px;
+	text-decoration:none;
+}
+
 #footer{
 	width:98%;
 	height:40px;
@@ -212,6 +225,10 @@ fieldset ol {
 }  
 fieldset li {   
 	padding-bottom: 1em;  
+}
+
+.load{
+	padding: 1em 1em 0 1em;
 }
 
 select {

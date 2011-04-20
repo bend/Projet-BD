@@ -8,7 +8,11 @@
 					<?php
 						include("../utils/database_connection.php");
 						include("../lists/product_list_noload.php");
-					?>
+?>
+					<li>
+						<br/>
+						<a class="load" hidden="true" id="fancy" href="javascript:;" >preview product</a>
+					</li>
 					<label for="Quantity">Quantity</label>
 					<input id="quantity" name="quantity" class="text" type="text" onblur="javascript:check_isnum(this.value,'quantity_ok');"/>
 					<span id="quantity_ok"></span>

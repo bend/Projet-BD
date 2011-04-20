@@ -16,7 +16,7 @@
 				echo '<a id="zoom_img" href="';
 				echo $row['Img'];
 				echo '">';
-				echo '<img alt="click" width="100" onerror="javascript:this.src=\'img/empty.png\';" heigth="100"  src="';
+				echo '<img alt="click" width="100" onerror="javascript:this.src=\'img/empty.png\';"  src="';
 				echo $row['Img'];
 				echo'"/>';
 				echo'</a>';

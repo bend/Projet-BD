@@ -106,8 +106,9 @@ function add_to_cart_sell(){
 	document.getElementById("loading").innerHTML="";
 }
 
-function search_transaction(val){
+function search_transaction(){
 	document.getElementById("loading1").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
+	val = document.getElementById("tr_search").value;
 	if(val=="Enter an id, VAT num or date"){
 		alert("Please enter a value");
 		document.getElementById("loading1").innerHTML= "";
@@ -158,4 +159,15 @@ function load_transaction(val){
 
 
 
+}
+
+function enable_fancy(){
+		var prod_id = document.getElementById("product_list").value;
+		document.getElementById("fancy").href="loads/product_preview.php?ref="+prod_id;
+		document.getElementById("fancy").hidden=false;
+		$("a#fancy").fancybox({
+		'overlayShow'	: true,
+		'transitionIn'	: 'elastic',
+		'transitionOut'	: 'elastic'
+		});
 }

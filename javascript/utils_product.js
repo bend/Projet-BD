@@ -61,7 +61,6 @@ function load_product(ref){
     xmlHttp.send(null);
 	var resp = xmlHttp.responseText;
 	var array = resp.split("#@%");
-	
 	document.getElementById("ref").value = array[0];
 	document.getElementById("brand").value = array[1];
 	document.getElementById("denom").value = array[2];
