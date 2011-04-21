@@ -234,6 +234,28 @@ function load_repo_addresses(){
 }
 
 
+function load_stock_in_repo(){
+	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
+	var xmlHttp=GetXmlHttpObject();
+	var parameters="repo="+encodeURI(document.getElementById("repository_list1").value);
+	var url="loads/stock_load.php";
+	xmlHttp.open('POST', url, false);
+	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlHttp.setRequestHeader("Content-length", parameters.length);
+	xmlHttp.setRequestHeader("Connection", "close");
+	xmlHttp.send(parameters);
+	
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+			document.getElementById("table-stock").innerHTML=xmlHttp.responseText;
+	}
+	$("a#load_pro").fancybox({
+				'overlayShow'	: true,
+				'transitionIn'	: 'elastic',
+				'transitionOut'	: 'elastic'
+				});
+	document.getElementById("loading").innerHTML= "";
+}
+
 
 
 

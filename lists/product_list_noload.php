@@ -13,5 +13,4 @@
 	echo '</SELECT>';
 	echo '</FORM>';
 	$res->closeCursor();
-
 ?>

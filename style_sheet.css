@@ -210,6 +210,14 @@ body a:hover
 	height:600px;
 }
 
+#table-stock{
+	padding:5px;
+}
+
+#table-stock table{
+	border:black;
+}
+
 fieldset {   
 	margin: 15px 15px 15px 15px;   
 	padding: 0;  
