@@ -5,7 +5,7 @@
 	database_connect();
 	$query = "SELECT * FROM Transaction WHERE idTran='$val'";
 	$query2 = "SELECT * FROM Composition WHERE idTran='$val'";
-	$query3 = "SELECT SUM(Prix) as total from Composition WHERE IdTran='$val'";
+	$query3 = "SELECT SUM(Prix*Quantite) as total from Composition WHERE IdTran='$val'";
 	$res = database_query($query);
 	$res2 = database_query($query2);
 	$res3 = database_query($query3);
