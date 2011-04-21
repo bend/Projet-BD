@@ -177,3 +177,7 @@ function load_client_addresses(){
 	}
 }
 
+function load_cli(id){
+	load_subscreen('subscreens/client_view.php');
+	load_client(id);
+}

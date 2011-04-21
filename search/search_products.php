@@ -1,11 +1,6 @@
-<div id="sub_menu">
-	<?php
-		require("sub_menu/sub_menu_search_all.php");
-	?>
-</div>
-<div id="screen_body">
+<legend>Results in Products</legend>
 <?php
-		include("utils/database_connection.php");
+		include("../utils/database_connection.php");
 
 		$searched_data = $_REQUEST['search'];
 		$query_1 = "SELECT * FROM TypeProduit WHERE RefInterne like '$searched_data' OR  Marque like '%$searched_data%' OR Denomination like '%$searched_data%' OR  Description like '%$searched_data%'";
@@ -38,5 +33,4 @@
 
 		
 
-	?>
-</div>
+?>

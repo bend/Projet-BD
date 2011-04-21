@@ -26,7 +26,8 @@
 					echo '</fieldset>';
 				}
 				$res->closeCursor();
-			}
+			}else
+				echo 'No Warnings';
 
 ?>
 </div>

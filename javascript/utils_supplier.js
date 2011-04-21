@@ -210,6 +210,10 @@ function load_supplier_addresses(){
 }
 
 
+function load_sup(id){
+	load_subscreen('subscreens/supplier_view.php');
+	load_supplier(id);
+}
 
 
 

@@ -164,6 +164,13 @@ body a:hover
 
 }
 
+#identite-search{
+	margin-top:3px;
+	padding:3px;
+	min-height:10px;
+	border:solid 1px white;
+}
+
 #product_search a{
 	color:white;
 }
