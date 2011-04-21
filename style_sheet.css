@@ -84,6 +84,20 @@ body a:hover
 	margin-left:210px;
 }
 
+#warnings fieldset{
+	padding:5px;
+}
+
+#warnings a{
+	text-decoration:none;
+}
+
+.warning{
+	padding:5px;
+	color:white;
+	background-color:red;
+	font-weight:bold;
+}
 #sub_menu{
 	margin-top:20px;
 	margin-bottom:20px;

@@ -4,7 +4,7 @@
 	database_connect();
 	$result = database_query($query);
 	while($row = $result->fetch()){
-		echo $row['Nom'];
+		echo $row['NomE'];
 		echo '#@%';
 		echo $row['Numero'];
 		echo ' ';
