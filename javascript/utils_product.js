@@ -165,3 +165,21 @@ function list_union_quantity(repo){
 
 }
 
+
+function load_product_repo(id){
+
+	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
+	var xmlHttp=GetXmlHttpObject();
+	var url="loads/product_repo_load.php";
+	var parameters = "product=" + encodeURI(id);
+	xmlHttp.open('POST', url, false);
+	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlHttp.setRequestHeader("Content-length", parameters.length);
+	xmlHttp.setRequestHeader("Connection", "close");
+	xmlHttp.send(parameters);
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+    	document.getElementById("table-stock").innerHTML=xmlHttp.responseText;
+		show("#table-stock");
+	}
+	document.getElementById("loading").innerHTML="";
+}

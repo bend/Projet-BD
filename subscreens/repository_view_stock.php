@@ -1,7 +1,7 @@
 <fieldset>
-	<legend>Move Stock from repositories</legend>
+	<legend>View Stocks in repositories</legend>
 	<fieldset>
-		<legend>From</legend>
+		<legend>Select Repository</legend>
 		<?php
 			include("../utils/database_connection.php");
 			include("../lists/repository_list_onclick_2.php");
