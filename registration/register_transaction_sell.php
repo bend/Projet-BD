@@ -36,6 +36,9 @@
 		$query6 = "UPDATE Stock SET Quantite=Stock.Quantite-'$quantity' WHERE RefInterne='$product' AND NomE='$repo'";
 		database_edit($query6);
 	}
+
+	$query7 = "UPDATE Client SET DateDernierAchat=CURDATE() WHERE NumTVA='$client'";
+	database_edit($query7);
 	
 	//TODO ADD BETTER VISUAL
 	echo "Transaction added";

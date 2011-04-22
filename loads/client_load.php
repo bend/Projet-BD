@@ -3,8 +3,8 @@
 	$vatnum = $_GET['vatnum'];
 	database_connect();
 	
-	$query = "SELECT * from Identite where NumTVA = '$vatnum'";
-	$query2 = "SELECT * from Client where NumTVA = '$vatnul'";
+	$query = "SELECT * FROM Identite WHERE NumTVA = '$vatnum'";
+	$query2 = "SELECT * FROM Client WHERE NumTVA = '$vatnum'";
 	$res = database_query($query);
 	$res2 = database_query($query2);
 

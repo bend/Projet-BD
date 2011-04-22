@@ -88,13 +88,12 @@ function load_client(numtva){
         alert ("Browser does not support HTTP Request");
         return;
     }
-    var url="loads/supplier_load.php";
+    var url="loads/client_load.php";
     url=url+"?vatnum="+numtva;
     xmlHttp.open("GET",url,false);
     xmlHttp.send(null);
 	var resp = xmlHttp.responseText;
 	var array = resp.split("#@%");
-	
 	document.getElementById("name").value = array[0];
 	document.getElementById("surname").value = array[1];
 	document.getElementById("vatnum").value = array[2];
