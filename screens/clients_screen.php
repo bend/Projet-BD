@@ -6,15 +6,13 @@
 </div>
 <div id="screen_body">
 	<fieldset>
-	<legend>Best Customer of the last 30 days (Purchase Amout>1000 EUR)</legend>
+	<legend>Best Customer of the last 30 days (TOP 5)</legend>
 	<div id="warnings">
 <?php
-		//TODO ADD PURCHASE AMOUNT
 		include("utils/database_connection.php");
 		database_connect();
-		$query = "SELECT Client.NumTVA FROM Client JOIN Transaction JOIN Composition 
-			WHERE Client.NumTVA=Transaction.NumTVA AND Transaction.IdTran=Composition.IdTran 
-			AND Transaction.Date+0 > CURDATE() -30 AND (SELECT SUM(Prix*Quantite) > 1000)";
+		$query ="SELECT NumTVA, SUM(Prix*Quantite) as somme ,Transaction.idTran FROM Transaction NATURAL JOIN Composition GROUP BY
+		   			Transaction.NumTVA ORDER BY (Sum(Prix*Quantite)) DESC LIMIT 5";
 		$res = database_query($query);
 		while($row = $res->fetch()){
 			$id = $row['NumTVA'];
@@ -31,6 +29,8 @@
 			echo $row2['Nom'];
 			echo ' ';
 			echo $row2['Prenom'];
+			echo '<br/>Total purchase amount: ';
+			echo $row['somme'];
 			echo '</fieldset>';
 		}
 ?>
