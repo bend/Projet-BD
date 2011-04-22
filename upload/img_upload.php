@@ -1,7 +1,7 @@
 
 <?php
-
-//define a maxim size for the uploaded images in Kb
+	include("../utils/resize.class.php");
+	//define a maxim size for the uploaded images in Kb
  define ("MAX_SIZE","1000"); 
 
 //This function reads the extension of the file. It is used to determine if the file  is an image by checking the extension.
@@ -57,9 +57,12 @@ if ($size > MAX_SIZE*1024)
 //we will give an unique name, for example the time in unix time format
 $image_name=time().'.'.$extension;
 //the new name will be containing the full path where will be stored (images folder)
-$newname="gallery/".$image_name;
+$newname="../gallery/".$image_name;
 //we verify if the image has been uploaded, and print error instead
 $copied = copy($_FILES['image']['tmp_name'], $newname);
+$thumb = new Image($newname); 
+$thumb->width(300);
+$thumb->save();
 if (!$copied) 
 {
 	echo '<h1>Copy unsuccessfull!</h1>';

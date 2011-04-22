@@ -85,7 +85,7 @@ function choose(url){
 }
 
 function load_gallery(){
-    var url="gallery_preview.php";
+    var url="img_gallery/gallery_preview.php";
 	xmlHttp = GetXmlHttpObject();
     xmlHttp.open("GET",url,false);
     xmlHttp.send(null);
@@ -95,3 +95,7 @@ function load_gallery(){
 
 }
 
+function preview_img(){
+	var url= document.getElementById("imgpath").src;
+	document.getElementById("image_preview").innerHTML='<img src="'+url+'"/>';
+}

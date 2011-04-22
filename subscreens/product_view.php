@@ -57,6 +57,7 @@ type="text" readonly="readonly" />
 <a id="zoom_img"  href="http://">
 <img id="imgpath"   name="imgpath"   width="200" heigth="200" class="text" alt="" onerror="javascript:this.src='img/empty.png'; this.width='0';"/>
 </a>
+
 </li>   
 <div id="loading"></div>
 </fieldset>
