@@ -79,3 +79,19 @@ function check_isbool(val,id){
 	return;
 }
 
+function choose(url){
+	document.getElementById("imgpath").value = url;
+	$.fancybox.close();
+}
+
+function load_gallery(){
+    var url="gallery_preview.php";
+	xmlHttp = GetXmlHttpObject();
+    xmlHttp.open("GET",url,false);
+    xmlHttp.send(null);
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		document.getElementById("gal").innerHTML=xmlHttp.responseText;
+	}
+
+}
+

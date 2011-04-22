@@ -239,6 +239,10 @@ body a:hover
 	border:black;
 }
 
+#gallery{
+	background-color:RGB(109,109,109);
+}
+
 fieldset {   
 	margin: 15px 15px 15px 15px;   
 	padding: 0;  

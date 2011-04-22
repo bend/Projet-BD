@@ -31,7 +31,8 @@
 				'transitionIn'	: 'elastic',
 				'transitionOut'	: 'elastic'
 				});
-	});
+		});
+
 </script>
 	</head>
     <body>

@@ -53,9 +53,16 @@ type="text" onblur="javascript:check_isnum(this.value,'vat_ok');" />
 </li>   
 <li>   
 <label for="imgpath">Path To Image</label>   
-<input type="text" id="imgpath" name="imgpath" class="text"/>   
+<input type="text" id="imgpath" name="imgpath" class="text"/>
+
+	<a id="choose" onclick="$.fancybox('<div id=\'gal\'></div><script>load_gallery();</script>',{
+		'autoDimensions'	: true,
+		'transitionIn'		: 'elastic',
+		'transitionOut'		: 'elastic'
+	}
+);" href="javascript:;"/>Choose a picture</a>
+
 </li>   
 <input type="button" value="Submit" onclick="javascript:add_product();"/>
 <div id="loading"></div>
 </fieldset>
-</ol>   
