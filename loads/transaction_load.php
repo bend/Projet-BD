@@ -18,6 +18,21 @@
 	echo '<fieldset><legend>Transaction Details</legend>';
 	echo "Transaction ID: ";
 	echo $row['IdTran'];
+	
+	//CHECK IF ITS A CLIENT OR A SUPPLIER
+	$idTran = $row['IdTran'];
+	//check if its a client
+	$check = "SELECT * FROM Achat WHERE idTran='$idTran'";
+	
+	$bool = database_query($check);
+	echo '<br/>Type: ';
+	if($bool->rowCount()==0){
+		echo 'Sale';
+	}else echo 'Purchase';
+
+
+
+
 	//TODO ADD A LINK TO CLIENT
 	echo '<br/>VAT Number: ';
 	echo $row['NumTVA'];
