@@ -2,18 +2,18 @@
 
 function load_repository(name){
 	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
-    xmlHttp=GetXmlHttpObject();
-    if (xmlHttp==null){
-        alert ("Browser does not support HTTP Request");
-        return;
-    }
-    var url="loads/repository_load.php";
-    url=url+"?name="+name;
-    xmlHttp.open("GET",url,false);
-    xmlHttp.send(null);
+	xmlHttp=GetXmlHttpObject();
+	if (xmlHttp==null){
+		alert ("Browser does not support HTTP Request");
+		return;
+	}
+	var url="loads/repository_load.php";
+	url=url+"?name="+name;
+	xmlHttp.open("GET",url,false);
+	xmlHttp.send(null);
 	var resp = xmlHttp.responseText;
 	var array = resp.split("#@%");
-	
+
 	document.getElementById("name").value = array[0];
 	document.getElementById("roadname").value = array[1];
 	document.getElementById("roadnumber").value = array[2];
@@ -21,7 +21,7 @@ function load_repository(name){
 	document.getElementById("postcode").value = array[4];
 	document.getElementById("country").value = array[5];
 	document.getElementById("loading").innerHTML="";
-	
+
 	document.getElementById("button_ok").disabled = false;
 }
 
@@ -50,9 +50,9 @@ function update_repository(){
 	xmlHttp.setRequestHeader("Content-length", parameters.length);
 	xmlHttp.setRequestHeader("Connection", "close");
 	xmlHttp.send(parameters);
-	
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
-    	document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
+
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
 		show("#screen_body");
 		return;
 	}
@@ -74,19 +74,19 @@ function add_repo(){
 	}
 
 	/* Check the uniqueness of the Ref NUM */
-    xmlHttp=GetXmlHttpObject();
-    if (xmlHttp==null){
-        alert ("Browser does not support HTTP Request");
+	xmlHttp=GetXmlHttpObject();
+	if (xmlHttp==null){
+		alert ("Browser does not support HTTP Request");
 		document.getElementById("loading").innerHTML= "";
-        returnh
-   }
-    var url="checks/check_repo_name_bool.php";
-    url=url+"?name="+document.getElementById("name").value + "&roadname=" + encodeURI(document.getElementById("roadname").value)+"&roadnum=" + 
+		returnh
+	}
+	var url="checks/check_repo_name_bool.php";
+	url=url+"?name="+document.getElementById("name").value + "&roadname=" + encodeURI(document.getElementById("roadname").value)+"&roadnum=" + 
 		encodeURI(document.getElementById("roadnumber").value)+"&town=" + encodeURI(document.getElementById("suburb").value)+
 		"&code=" + encodeURI(document.getElementById("postcode").value)+"&country=" + encodeURI(document.getElementById("country").value);
-    xmlHttp.open("GET",url,false);
-    xmlHttp.send(null);
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+	xmlHttp.open("GET",url,false);
+	xmlHttp.send(null);
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
 		if(xmlHttp.responseText == true){
 			document.getElementById("loading").innerHTML= "";
 			return;
@@ -103,9 +103,9 @@ function add_repo(){
 	xmlHttp.setRequestHeader("Content-length", parameters.length);
 	xmlHttp.setRequestHeader("Connection", "close");
 	xmlHttp.send(parameters);
-	
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
-    	document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
+
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
 		show("#screen_body");
 		return;
 	}
@@ -122,8 +122,8 @@ function list_union_repo(prod){
 	xmlHttp.setRequestHeader("Content-length", parameters.length);
 	xmlHttp.setRequestHeader("Connection", "close");
 	xmlHttp.send(parameters);
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
-    	document.getElementById("repo").innerHTML=xmlHttp.responseText;
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		document.getElementById("repo").innerHTML=xmlHttp.responseText;
 		show("#rep");
 	}
 	document.getElementById("loading").innerHTML="";
@@ -131,22 +131,22 @@ function list_union_repo(prod){
 
 
 function check_repo_name(str){
-    if (str.length==0){
-        document.getElementById("available").innerHTML="";
+	if (str.length==0){
+		document.getElementById("available").innerHTML="";
 		show("#available");
-        return;
-    }
-    xmlHttp=GetXmlHttpObject();
-    if (xmlHttp==null){
-        alert ("Browser does not support HTTP Request");
-        return;
-    }
-    var url="checks/check_repo_name.php";
-    url=url+"?name="+str;
-    xmlHttp.open("GET",url,false);
-    xmlHttp.send(null);
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
-    	document.getElementById("available").innerHTML=xmlHttp.responseText;
+		return;
+	}
+	xmlHttp=GetXmlHttpObject();
+	if (xmlHttp==null){
+		alert ("Browser does not support HTTP Request");
+		return;
+	}
+	var url="checks/check_repo_name.php";
+	url=url+"?name="+str;
+	xmlHttp.open("GET",url,false);
+	xmlHttp.send(null);
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		document.getElementById("available").innerHTML=xmlHttp.responseText;
 		show("#available");
 		return;
 	}
@@ -163,8 +163,8 @@ function list_products_in_repo(){
 	xmlHttp.setRequestHeader("Content-length", parameters.length);
 	xmlHttp.setRequestHeader("Connection", "close");
 	xmlHttp.send(parameters);
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
-    	document.getElementById("prodo").innerHTML=xmlHttp.responseText;
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		document.getElementById("prodo").innerHTML=xmlHttp.responseText;
 		show("#prodo");
 	}
 	document.getElementById("loading").innerHTML="";
@@ -184,7 +184,7 @@ function transfert_stock(from, to, prod, quantity){
 		document.getElementById("loading").innerHTML= "";
 		return;
 	}
-	
+
 	var xmlHttp=GetXmlHttpObject();
 	var url="updates/update_move_stock.php";
 	var parameters = "from=" + encodeURI(from)+"&to="+encodeURI(to)+"&prod="+encodeURI(prod)+"&quantity="+ encodeURI(quantity);
@@ -193,8 +193,8 @@ function transfert_stock(from, to, prod, quantity){
 	xmlHttp.setRequestHeader("Content-length", parameters.length);
 	xmlHttp.setRequestHeader("Connection", "close");
 	xmlHttp.send(parameters);
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
-    	document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
 		show("#screen_body");
 	}
 	document.getElementById("loading").innerHTML="";
@@ -213,8 +213,8 @@ function load_repo_addresses(){
 	xmlHttp.setRequestHeader("Content-length", parameters.length);
 	xmlHttp.setRequestHeader("Connection", "close");
 	xmlHttp.send(parameters);
-	
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
 		var resp = xmlHttp.responseText;
 		var array_addr = resp.split("#@%");
 		var mark = new Array();
@@ -244,15 +244,15 @@ function load_stock_in_repo(){
 	xmlHttp.setRequestHeader("Content-length", parameters.length);
 	xmlHttp.setRequestHeader("Connection", "close");
 	xmlHttp.send(parameters);
-	
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
-			document.getElementById("table-stock").innerHTML=xmlHttp.responseText;
+
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		document.getElementById("table-stock").innerHTML=xmlHttp.responseText;
 	}
 	$("a#load_pro").fancybox({
-				'overlayShow'	: true,
-				'transitionIn'	: 'elastic',
-				'transitionOut'	: 'elastic'
-				});
+		'overlayShow'	: true,
+		'transitionIn'	: 'elastic',
+		'transitionOut'	: 'elastic'
+	});
 	document.getElementById("loading").innerHTML= "";
 }
 

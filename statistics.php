@@ -2,20 +2,20 @@
 session_start();
 include("header.php");
 ?>
-        <div id="contents">
-		<?php
-        require("screens/statistics_screen.php");
-        ?>
-        </div>
-		<div id="footer">
-			<?php
-			require("footer.php");
- 			?>
-        </div>
-    </body>
+<div id="contents">
+	<?php
+	require("screens/statistics_screen.php");
+	?>
+</div>
+<div id="footer">
+	<?php
+	require("footer.php");
+	?>
+</div>
+</body>
 
 </html>
 <script type=text/javascript>
-    show_all();
+show_all();
 </script>
 

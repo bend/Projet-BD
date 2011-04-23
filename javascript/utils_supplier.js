@@ -1,18 +1,15 @@
-
-
-
 function GetXmlHttpObject(){
-    var xmlHttp=null;
-    try{// Firefox, Opera 8.0+, Safari
-        xmlHttp=new XMLHttpRequest();
-    }catch (e){// Internet Explorer
-        try{
-            xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
-        }catch (e){
-            xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-    }
-    return xmlHttp;
+	var xmlHttp=null;
+	try{// Firefox, Opera 8.0+, Safari
+		xmlHttp=new XMLHttpRequest();
+	}catch (e){// Internet Explorer
+		try{
+			xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+		}catch (e){
+			xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	}
+	return xmlHttp;
 }
 
 
@@ -25,25 +22,25 @@ function add_supplier(){
 		return;
 	}
 	/* Check that numbers are numbers */
-	
+
 	if(!is_num(document.getElementById("postcode").value) || !is_num(document.getElementById("roadnumber").value)){
 		document.getElementById("loading").innerHTML = "";
 		return;
 	}
-	
-	
+
+
 	/* Check the uniqueness of the VAT NUM */
-    xmlHttp=GetXmlHttpObject();
-    if (xmlHttp==null){
-        alert ("Browser does not support HTTP Request");
+	xmlHttp=GetXmlHttpObject();
+	if (xmlHttp==null){
+		alert ("Browser does not support HTTP Request");
 		document.getElementById("loading").innerHTML= "";
-        return;
-    }
-    var url="checks/check_num_vat_bool_supplier.php";
-    url=url+"?vatnum="+document.getElementById("vatnum").value;
-    xmlHttp.open("GET",url,false);
-    xmlHttp.send(null);
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		return;
+	}
+	var url="checks/check_num_vat_bool_supplier.php";
+	url=url+"?vatnum="+document.getElementById("vatnum").value;
+	xmlHttp.open("GET",url,false);
+	xmlHttp.send(null);
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
 		if(xmlHttp.responseText == true){
 			document.getElementById("loading").innerHTML= "";
 			return;
@@ -57,15 +54,15 @@ function add_supplier(){
 		"&roadname=" + encodeURI(document.getElementById("roadname").value)+"&roadnum=" + 
 		encodeURI(document.getElementById("roadnumber").value)+"&town=" + encodeURI(document.getElementById("suburb").value)+
 		"&code=" + encodeURI(document.getElementById("postcode").value)+"&country=" +
-	   	encodeURI(document.getElementById("country").value);
+		encodeURI(document.getElementById("country").value);
 	xmlHttp.open('POST', url, false);
 	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlHttp.setRequestHeader("Content-length", parameters.length);
 	xmlHttp.setRequestHeader("Connection", "close");
 	xmlHttp.send(parameters);
-	
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
-    	document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
+
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
 		show("#screen_body");
 		return;
 	}
@@ -82,7 +79,7 @@ function update_supplier(){
 		return;
 	}
 	/* Check that numbers are numbers */
-	
+
 	if(!is_num(document.getElementById("postcode").value) || !is_num(document.getElementById("roadnumber").value)){
 		document.getElementById("loading").innerHTML = "";
 		return;
@@ -97,7 +94,7 @@ function update_supplier(){
 		document.getElementById("loading").innerHTML= "";
 		return;
 	}
-	
+
 	var xmlHttp=GetXmlHttpObject();
 	var url="updates/supplier_update.php";
 	var parameters = "name=" + encodeURI(document.getElementById("name").value) +"&surname=" + 
@@ -105,15 +102,15 @@ function update_supplier(){
 		"&roadname=" + encodeURI(document.getElementById("roadname").value)+"&roadnum=" + 
 		encodeURI(document.getElementById("roadnumber").value)+"&town=" + encodeURI(document.getElementById("suburb").value)+
 		"&code=" + encodeURI(document.getElementById("postcode").value)+"&country=" +
-	   	encodeURI(document.getElementById("country").value)+"&banckrupt="+encodeURI(banckrupt); 
+		encodeURI(document.getElementById("country").value)+"&banckrupt="+encodeURI(banckrupt); 
 	xmlHttp.open('POST', url, false);
 	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlHttp.setRequestHeader("Content-length", parameters.length);
 	xmlHttp.setRequestHeader("Connection", "close");
 	xmlHttp.send(parameters);
-	
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
-    	document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
+
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		document.getElementById("screen_body").innerHTML=xmlHttp.responseText;
 		show("#screen_body");
 		return;
 	}
@@ -121,22 +118,22 @@ function update_supplier(){
 }
 
 function check_numvat_supplier(str){
-    if (str.length==0){
-        document.getElementById("available").innerHTML="";
+	if (str.length==0){
+		document.getElementById("available").innerHTML="";
 		show("#available");
-        return;
-    }
-    xmlHttp=GetXmlHttpObject();
-    if (xmlHttp==null){
-        alert ("Browser does not support HTTP Request");
-        return;
-    }
-    var url="checks/check_num_vat_supplier.php";
-    url=url+"?vatnum="+str;
-    xmlHttp.open("GET",url,false);
-    xmlHttp.send(null);
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
-    	document.getElementById("available").innerHTML=xmlHttp.responseText;
+		return;
+	}
+	xmlHttp=GetXmlHttpObject();
+	if (xmlHttp==null){
+		alert ("Browser does not support HTTP Request");
+		return;
+	}
+	var url="checks/check_num_vat_supplier.php";
+	url=url+"?vatnum="+str;
+	xmlHttp.open("GET",url,false);
+	xmlHttp.send(null);
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+		document.getElementById("available").innerHTML=xmlHttp.responseText;
 		show("#available");
 		var temp = xmlHttp.responseText;
 		if(check_vat_both(str)==true && temp=="")
@@ -148,18 +145,18 @@ function check_numvat_supplier(str){
 
 function load_supplier(numtva){
 	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
-    xmlHttp=GetXmlHttpObject();
-    if (xmlHttp==null){
-        alert ("Browser does not support HTTP Request");
-        return;
-    }
-    var url="loads/supplier_load.php";
-    url=url+"?vatnum="+numtva;
-    xmlHttp.open("GET",url,false);
-    xmlHttp.send(null);
+	xmlHttp=GetXmlHttpObject();
+	if (xmlHttp==null){
+		alert ("Browser does not support HTTP Request");
+		return;
+	}
+	var url="loads/supplier_load.php";
+	url=url+"?vatnum="+numtva;
+	xmlHttp.open("GET",url,false);
+	xmlHttp.send(null);
 	var resp = xmlHttp.responseText;
 	var array = resp.split("#@%");
-	
+
 	document.getElementById("name").value = array[0];
 	document.getElementById("surname").value = array[1];
 	document.getElementById("vatnum").value = array[2];
@@ -189,8 +186,8 @@ function load_supplier_addresses(){
 	xmlHttp.setRequestHeader("Content-length", parameters.length);
 	xmlHttp.setRequestHeader("Connection", "close");
 	xmlHttp.send(parameters);
-	
-    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
+
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete"){
 		var resp = xmlHttp.responseText;
 		var array_addr = resp.split("#@%");
 		var mark = new Array();

@@ -25,7 +25,7 @@
 			<img src="img/bar.png" alt="clic"/>
 		</div>
 	</div>
-	
+
 	<div id="menu_pack">
 		<div id="menu_button">
 			<a href="suppliers.php" >Suppliers</a>
@@ -34,7 +34,7 @@
 			<img src="img/bar.png" alt="clic"/>
 		</div>
 	</div>
-	
+
 	<div id="menu_pack">
 		<div id="menu_button">
 			<a href="repositories.php" >Repositories</a>
