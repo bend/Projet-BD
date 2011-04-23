@@ -108,7 +108,7 @@ function add_to_cart_sell(){
 function search_transaction(){
 	document.getElementById("loading1").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
 	val = document.getElementById("tr_search").value;
-	if(val=="Enter an id, VAT num or date"){
+	if(val=="Enter an id, VAT num or date" || val==""){
 		alert("Please enter a value");
 		document.getElementById("loading1").innerHTML= "";
 		return;
