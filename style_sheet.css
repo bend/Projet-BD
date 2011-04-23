@@ -241,6 +241,13 @@ body a:hover
 
 #gallery{
 	background-color:RGB(109,109,109);
+
+}
+
+#gallery img{
+	margin:5px;
+	float:right;
+	padding:5px;
 }
 
 fieldset {   
