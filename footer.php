@@ -1,5 +1,5 @@
 <div class="fleft">
-	<h3>Copyright® 2011 Benoît Daccache Anthony Popolo Cagnisi Romain Van Vooren </h2>
+	<h3>Copyright® 2011 Benoît Daccache Anthony Popolo Cagnisi Romain Van Vooren </h3>
 </div>
 <div class="fright">
 	<a href="http://www.php.net"><img src="img/php.gif"></a>
