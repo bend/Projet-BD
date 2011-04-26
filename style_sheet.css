@@ -250,6 +250,11 @@ body a:hover
 	padding:5px;
 }
 
+#chart{
+	margin:5px;
+	padding:5px;
+}
+
 fieldset {   
 	margin: 15px 15px 15px 15px;   
 	padding: 0;  
