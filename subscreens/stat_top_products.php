@@ -1,4 +1,5 @@
 <fieldset>
+	<legend>Top products</legend>
 	<fieldset>
 		<legend>Choose date</legend>
 		<legend>From</legend>
