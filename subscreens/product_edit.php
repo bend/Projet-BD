@@ -9,7 +9,7 @@
 	</fieldset>
 	<ol>
 		<li>   
-		<label for="InternalRef">Internal ref:</label>   
+		<label for="InternalRef">Internal ref(*):</label>   
 		<input id="ref" name="ref" class="text" type="text" readonly="readonly"/>   
 		<span id="available"></span>
 		</li>   
@@ -35,25 +35,25 @@
 		<span id="cont_ok"></span>
 		</li>   
 		<li>   
-		<label for="barcode	">BarCode</label>   
+		<label for="barcode	">BarCode(*):</label>   
 		<input id="barcode" name="barcode" class="text"   
 		type="text" onblur="javascript:check_isnum(this.value,'bar_ok');"/>   
 		<span id="bar_ok"></span>
 		</li>   
 		<li>   
-		<label for="sellprice">Selling Price</label>   
+		<label for="sellprice">Selling Price(*):</label>   
 		<input id="sellprice" name="sellprice"   
 		class="text text" type="text"  onblur="javascript:check_isnum(this.value,'sp_ok');" />   
 		<span id="sp_ok"></span>
 		</li>  
 		<li>   
-		<label for="buyprice">Buying Price</label>   
+		<label for="buyprice">Buying Price(*)</label>   
 		<input id="buyprice" name="buyprice" class="text"   
 		type="text" onblur="javascript:check_isnum(this.value,'bp_ok');" />   
 		<span id="bp_ok"></span>
 		</li>   
 		<li>   
-		<label for="vatrate">VAT Rate</label>   
+		<label for="vatrate">VAT Rate(*)</label>   
 		<input id="vatrate" name="vatrate" class="text"   
 		type="text" onblur="javascript:check_isnum(this.value,'vat_ok');" />   
 		<span id="vat_ok"></span>

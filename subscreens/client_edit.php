@@ -12,7 +12,7 @@
 		<legend> Personnal info</legend> 
 		<ol>   
 			<li>   
-			<label for="name">Name:</label>   
+			<label for="name">Name(*):</label>   
 			<input id="name" name="name" class="text" type="text" />   
 			</li>   
 			<li>   
@@ -20,7 +20,7 @@
 			<input id="surname" name="surname" class="text" type="text" />   
 			</li>   
 			<li>   
-			<label for="">VAT number</label>   
+			<label for="">VAT number(*):</label>   
 			<input id="vatnum" name="vatnum" readonly="readonly" class="text" type="text"/>
 			<span id="available"></span>
 			</li>   
@@ -30,7 +30,7 @@
 		<legend> Address</legend>   
 		<ol>   
 			<li>   
-			<label for="RoadName">Road name:</label>   
+			<label for="RoadName">Road name(*):</label>   
 			<input id="roadname" name="roadname" class="text"   
 			type="text" />   
 			</li>   

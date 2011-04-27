@@ -16,7 +16,7 @@ CREATE TABLE  STOCK.Identite (
 
 CREATE TABLE  STOCK.Fournisseur (
 	NumTVA VARCHAR(15) NOT NULL ,
-	Faillite BOOL NOT NULL DEFAULT  '0', 
+	Faillite BOOL NOT NULL DEFAULT  '0',
 	Foreign Key (NumTVA) references STOCK.Identite(NumTVA),
 	UNIQUE (
 		NumTVA
@@ -33,7 +33,7 @@ CREATE TABLE  STOCK.Client (
 );
 
 CREATE TABLE STOCK.TypeProduit(
-	RefInterne VARCHAR(20) NOT NULL PRIMARY KEY ,
+	RefInterne INT  NOT NULL PRIMARY KEY ,
 	Marque TEXT ,
 	Denomination TEXT ,
 	Description TEXT ,
@@ -98,5 +98,3 @@ CREATE TABLE  STOCK.Stock (
 	Foreign Key (NomE) references STOCK.Entrepot(NomE),
 	Foreign Key (RefInterne) references STOCK.TypeProduit(RefInterne)
 );
-
-

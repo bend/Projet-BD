@@ -7,7 +7,7 @@
 			<label for="Product">Product</label>
 			<?php
 			include("../utils/database_connection.php");
-			include("../lists/product_list_load_union.php");
+			include("../lists/product_available_load_union.php");
 			?>
 			<li>
 			<a class="load" hidden="true" id="fancy" href="javascript:;" >preview product</a>
