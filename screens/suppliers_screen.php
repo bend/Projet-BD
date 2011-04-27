@@ -11,9 +11,9 @@
 			include("utils/database_connection.php");
 			database_connect();
 			$query= "SELECT SUM(Prix*Quantite) as somme ,Fournisseur.NumTVA FROM Fournisseur NATURAL JOIN Transaction NATURAL JOIN Composition 
-			WHERE Fournisseur.NumTVA=Transaction.NumTVA AND Faillite=1 AND Transaction.IdTran=Composition.IdTran AND (SELECT SUM(Prix*Quantite))> 100 GROUP BY NumTVA";
+			WHERE Fournisseur.NumTVA=Transaction.NumTVA AND Faillite=1 AND Transaction.IdTran=Composition.IdTran AND Date>CurDate()-30 GROUP BY NumTVA";
 			$res = database_query($query);
-			echo '<div class="warning"> These Suppliers are Banckrupted</div>';
+			echo '<div class="warning"> These Suppliers Banckrupted these 30 last days</div>';
 			while($row = $res->fetch()){
 				$id = $row['NumTVA'];
 				$query2 = "SELECT * FROM Identite WHERE NumTVA='$id'";

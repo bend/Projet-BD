@@ -5,7 +5,4 @@ include("graph/phpgraphlib.php");
 	?>
 </div>
 <div id="screen_body">
-
-	<img src="test.php" />
-
 </div>
