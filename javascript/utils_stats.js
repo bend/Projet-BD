@@ -13,7 +13,6 @@ function load_top_products_chart(){
 	document.getElementById("chart").innerHTML='<img src="'+url+'"/>';
 }
 
-
 function load_profit_chart(){
 	var year = document.getElementById("year").value;
 	
@@ -38,5 +37,18 @@ function load_profit_week_chart(){
 	}
 
 	var url='stats/benef_week.php?year='+year+'&month='+month+'&week=0'+week;
+	document.getElementById("chart").innerHTML='<img src="'+url+'"/>';
+}
+
+
+function load_value_year_chart(){
+	var year = document.getElementById("year").value;
+	
+	if( year.indexOf("YEAR")>-1){
+		alert("Please choose the year");
+		return;
+	}
+
+	var url='stats/total_value_year.php?year='+year;
 	document.getElementById("chart").innerHTML='<img src="'+url+'"/>';
 }

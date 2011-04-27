@@ -10,7 +10,7 @@ $day_from = 01;
 
 database_connect();
 
-$title = "Bénéfice réalisé par mois sur une année (diff entre prix vente des ventes réalisées sur le mois et prix d'achat)";
+$title = "Profits earned per month over a year (diff betwwen selling price of sales of the month and the purchase price)";
 $date = new DateTime();
 $date->setDate($year_from, $month_from, $day_from);
 $dateEnd = new DateTime();
@@ -44,7 +44,7 @@ $benef[$i]=$resultvente[$i]-$resultValeurAachat[$i];
 
 //$ydata = array_slice($ydata, -20);
 	
-$graph = new PHPGraphLib(700,450);
+$graph = new PHPGraphLib(900,450);
 $ydata = array("Jan" => $benef[0], "Feb" => $benef[1], "Mar" => $benef[2], "Apr" => $benef[3], "May" => $benef[4], "Jun" => $benef[5], "Jul" => $benef[6], "Aug" => $benef[7], "Sep" => $benef[8], "Oct" => $benef[9], "Nov" => $benef[10], "Dec" => $benef[11]);
 $graph->addData($ydata);
 $graph->setTitle($title);

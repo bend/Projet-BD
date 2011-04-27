@@ -13,7 +13,7 @@ $week_from = 3;
 */
 database_connect();
 
-$title = "Bénéfice réalisé par jour sur une semaine (diff prix vente prix d'achat)";
+$title = "Profit made on a day of a week (diff between sale price and purchase price)";
 
 $day_from = $week_from*7;
 $date = new DateTime();
@@ -49,7 +49,7 @@ for($i=0; $i<7;$i++){
 
 
 
-$graph = new PHPGraphLib(800,450);
+$graph = new PHPGraphLib(900,450);
 $ydata = array("Mon" => $benef[0], "Tue" => $benef[1], "Wed" => $benef[2], "Thu" => $benef[3], "Fri" => $benef[4], "Sat" => $benef[5], "Sun" => $benef[6]);
 $graph->addData($ydata);
 $graph->setTitle($title);

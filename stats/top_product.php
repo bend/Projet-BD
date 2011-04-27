@@ -31,7 +31,7 @@ while($row = $result->fetch()){
 
 }
 
-$graph = new PHPGraphLibPie(640, 480);
+$graph = new PHPGraphLibPie(900, 450);
 $graph->addData($data);
 $graph->setTitle($title);
 $graph->setLabelTextColor('50,50,50');
