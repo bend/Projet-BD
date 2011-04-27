@@ -1,7 +1,7 @@
 <?php
 include("../utils/database_connection.php");
 $prod_id = $_POST['product'];
-$query = "SELECT NomE FROM Stock WHERE RefInterne='$prod_id' and Quantite>0";
+$query = "SELECT NomE FROM Stock WHERE RefInterne='$prod_id' AND Quantite>0";
 database_connect();
 $res = database_query($query);
 echo '<FORM>';

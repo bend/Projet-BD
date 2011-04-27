@@ -3,9 +3,9 @@
 include("../utils/database_connection.php");
 $val = $_GET['val'];
 database_connect();
-$query = "SELECT * FROM Transaction WHERE idTran='$val'";
-$query2 = "SELECT * FROM Composition WHERE idTran='$val'";
-$query3 = "SELECT SUM(Prix*Quantite) as total from Composition WHERE IdTran='$val'";
+$query = "SELECT * FROM Transaction WHERE IdTran='$val'";
+$query2 = "SELECT * FROM Composition WHERE IdTran='$val'";
+$query3 = "SELECT SUM(Prix*Quantite) AS total FROM Composition WHERE IdTran='$val'";
 $res = database_query($query);
 $res2 = database_query($query2);
 $res3 = database_query($query3);
@@ -22,7 +22,7 @@ echo '<div id="result_load">';
 		//CHECK IF ITS A CLIENT OR A SUPPLIER
 		$idTran = $row['IdTran'];
 		//check if its a client
-		$check = "SELECT * FROM Achat WHERE idTran='$idTran'";
+		$check = "SELECT * FROM Achat WHERE IdTran='$idTran'";
 
 		$bool = database_query($check);
 		echo '<br/>Type: ';
@@ -30,10 +30,6 @@ echo '<div id="result_load">';
 		echo 'Sale';
 		}else echo 'Purchase';
 
-
-
-
-		//TODO ADD A LINK TO CLIENT
 		echo '<br/>VAT Number: ';
 		echo $row['NumTVA'];
 		echo '<br/>Date: ';

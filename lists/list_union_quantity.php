@@ -2,7 +2,7 @@
 include("../utils/database_connection.php");
 $prod_id = $_POST['product'];
 $repo = $_POST['repo'];
-$query = "SELECT Quantite From STOCK.Stock WHERE NomE='$repo' and RefInterne='$prod_id'";
+$query = "SELECT Quantite FROM Stock WHERE NomE='$repo' and RefInterne='$prod_id'";
 database_connect();
 $res = database_query($query);
 echo '<FORM>';

@@ -10,7 +10,7 @@ $town=$_POST['town'];
 $country=$_POST['country'];
 
 database_connect();
-$query = "UPDATE STOCK.Identite SET Nom='$name',Prenom='$surname' ,Rue='$roadname', Numero='$roadnum', Localite='$town', CodePostal='$pcode', Pays='$country' WHERE NumTVA='$vatnum'";
+$query = "UPDATE Identite SET Nom='$name',Prenom='$surname' ,Rue='$roadname', Numero='$roadnum', Localite='$town', CodePostal='$pcode', Pays='$country' WHERE NumTVA='$vatnum'";
 database_edit($query);
 //TODO ADD BETTER VISUAL
 echo "Client updated";

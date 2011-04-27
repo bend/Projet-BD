@@ -1,7 +1,7 @@
 <?php
 include("../utils/database_connection.php");
 $repo_name = $_POST['repo'];
-$query = "SELECT RefInterne FROM Stock WHERE NomE='$repo_name'and Quantite>0";
+$query = "SELECT RefInterne FROM Stock WHERE NomE='$repo_name' AND Quantite>0";
 database_connect();
 $res = database_query($query);
 echo '<FORM>';

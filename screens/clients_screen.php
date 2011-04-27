@@ -11,7 +11,7 @@
 			<?php
 			include("utils/database_connection.php");
 			database_connect();
-			$query ="SELECT NumTVA, SUM(Prix*Quantite) as somme ,Transaction.idTran FROM Transaction NATURAL JOIN Composition GROUP BY
+			$query ="SELECT NumTVA, SUM(Prix*Quantite) AS somme ,Transaction.idTran FROM Transaction NATURAL JOIN Composition GROUP BY
 			Transaction.NumTVA ORDER BY (Sum(Prix*Quantite)) DESC LIMIT 5";
 			$res = database_query($query);
 			while($row = $res->fetch()){

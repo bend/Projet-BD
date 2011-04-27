@@ -3,7 +3,7 @@ include("../utils/database_connection.php");
 $repo = $_POST['repo'];
 database_connect();
 
-$query = "SELECT * from Stock WHERE NomE='$repo'";
+$query = "SELECT * FROM Stock WHERE NomE='$repo'";
 $res = database_query($query);
 echo '<table border="1">';
 	echo '

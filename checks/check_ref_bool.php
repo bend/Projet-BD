@@ -3,7 +3,7 @@
 	$ref = $_GET['ref'];
 	database_connect();
 	
-	$check = "SELECT RefInterne from TypeProduit  where RefInterne = '$ref'";
+	$check = "SELECT RefInterne FROM TypeProduit WHERE RefInterne = '$ref'";
 	$result = database_query($check);
 	if($result->rowCount()>0)
 		echo true;

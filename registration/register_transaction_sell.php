@@ -22,7 +22,7 @@ foreach ($array as $tuple){
 	$product = $t[0];
 	$quantity= $t[1];
 	$repo = $t[2];
-	$query3 = "INSERT INTO STOCK.Composition(IdTran, RefInterne, Prix, Quantite) VALUES ('$last_id', '$product', (SELECT PrixVente FROM TypeProduit WHERE RefInterne='$product'),'$quantity')";
+	$query3 = "INSERT INTO Composition(IdTran, RefInterne, Prix, Quantite) VALUES ('$last_id', '$product', (SELECT PrixVente FROM TypeProduit WHERE RefInterne='$product'),'$quantity')";
 	database_edit($query3);
 }
 

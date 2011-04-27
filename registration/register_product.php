@@ -12,7 +12,7 @@ $vatrate=$_POST['vatrate'];
 $imgpath = $_POST['imgpath'];
 
 database_connect();
-$query = "INSERT INTO STOCK.TypeProduit(RefInterne, Marque,Denomination, Description, Contenance, CodeBarre, PrixVente, PrixAchat, TVA, Img, Actif) VALUES 
+$query = "INSERT INTO TypeProduit(RefInterne, Marque,Denomination, Description, Contenance, CodeBarre, PrixVente, PrixAchat, TVA, Img, Actif) VALUES 
 ('$ref','$brand', '$denom', '$description', '$contenance', '$barcode', '$sellprice', '$buyprice', '$vatrate', '$imgpath', TRUE)";
 
 database_edit($query);

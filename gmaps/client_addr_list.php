@@ -1,6 +1,6 @@
 <?php
 	include("../utils/database_connection.php");
-	$query = "SELECT * From Identite Where NumTVA in (Select NumTVA From Client)";
+	$query = "SELECT * FROM Identite WHERE NumTVA IN (SELECT NumTVA FROM Client)";
 	database_connect();
 	$result = database_query($query);
 	while($row = $result->fetch()){

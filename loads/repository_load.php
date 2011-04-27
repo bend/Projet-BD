@@ -3,7 +3,7 @@ include("../utils/database_connection.php");
 $name = $_GET['name'];
 database_connect();
 
-$query = "SELECT * from Entrepot  where NomE = '$name'";
+$query = "SELECT * FROM Entrepot  WHERE NomE = '$name'";
 $res = database_query($query);
 $row = $res->fetch();
 echo $row['NomE'];

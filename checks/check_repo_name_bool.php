@@ -3,7 +3,7 @@
 	$name = $_GET['name'];
 	database_connect();
 	
-	$check = "SELECT Nom from Entrepot where Nom= '$name'";
+	$check = "SELECT Nom FROM Entrepot WHERE Nom= '$name'";
 	$result = database_query($check);
 	if($result->rowCount()>0)
 		echo true;

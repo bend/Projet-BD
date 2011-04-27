@@ -3,7 +3,7 @@ include("../utils/database_connection.php");
 $ref = $_GET['ref'];
 database_connect();
 
-$query = "SELECT * from TypeProduit  where RefInterne = '$ref'";
+$query = "SELECT * FROM TypeProduit  WHERE RefInterne = '$ref'";
 $res = database_query($query);
 $row = $res->fetch();
 

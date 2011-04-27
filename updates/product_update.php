@@ -12,7 +12,7 @@ $vatrate=$_POST['vatrate'];
 $imgpath = $_POST['imgpath'];
 
 database_connect();
-$query = "UPDATE STOCK.TypeProduit SET  Marque='$brand', Denomination='$denom', Description='$description', Contenance='$contenance', CodeBarre='$barcode', PrixVente='$sellprice', PrixAchat='$buyprice', TVA='$vatrate', Img='$imgpath' WHERE RefInterne='$ref'";
+$query = "UPDATE TypeProduit SET  Marque='$brand', Denomination='$denom', Description='$description', Contenance='$contenance', CodeBarre='$barcode', PrixVente='$sellprice', PrixAchat='$buyprice', TVA='$vatrate', Img='$imgpath' WHERE RefInterne='$ref'";
 database_edit($query);
 //TODO ADD BETTER VISUAL
 echo "Product updated";

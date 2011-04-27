@@ -6,12 +6,12 @@ $repo=$_POST['repo'];
 
 database_connect();
 //------------------------------------Execute once---------------------------------------------------
-$query1 = "INSERT INTO STOCK.Transaction(NumTVA, Date, Heure) VALUES ('$supplier', CURDATE(), CURTIME())";
+$query1 = "INSERT INTO Transaction(NumTVA, Date, Heure) VALUES ('$supplier', CURDATE(), CURTIME())";
 database_edit($query1);
 
 $last_id = database_getlast_inserted_id();
 
-$query2 = "INSERT INTO STOCK.Achat(IdTran) VALUES('$last_id')"; 
+$query2 = "INSERT INTO Achat(IdTran) VALUES('$last_id')"; 
 database_query($query2);
 //----------------------------------------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ foreach ($array as $tuple){
 	$t = explode("#",$tuple);
 	$product = $t[0];
 	$quantity= $t[1];
-	$query3 = "INSERT INTO STOCK.Composition(IdTran, RefInterne, Prix, Quantite) VALUES ('$last_id', '$product', (SELECT PrixAchat FROM TypeProduit WHERE RefInterne='$product'),'$quantity')";
+	$query3 = "INSERT INTO Composition(IdTran, RefInterne, Prix, Quantite) VALUES ('$last_id', '$product', (SELECT PrixAchat FROM TypeProduit WHERE RefInterne='$product'),'$quantity')";
 	database_edit($query3);
 }
 
@@ -32,12 +32,12 @@ foreach ($array as $tuple){
 	$t = explode("#",$tuple);
 	$product = $t[0];
 	$quantity= $t[1];
-	$query4 = "SELECT * FROM STOCK.Stock WHERE NomE='$repo' and RefInterne='$product'";
+	$query4 = "SELECT * FROM Stock WHERE NomE='$repo' and RefInterne='$product'";
 
 	$res = database_query($query4);
 
 	if($res->rowCount()==0){
-		$query5 = "INSERT INTO STOCK.Stock(NomE, RefInterne, Quantite) VALUES ('$repo','$product',  0)";
+		$query5 = "INSERT INTO Stock(NomE, RefInterne, Quantite) VALUES ('$repo','$product',  0)";
 		database_edit($query5);
 	}
 }

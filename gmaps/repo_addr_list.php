@@ -1,6 +1,6 @@
 <?php
 	include("../utils/database_connection.php");
-	$query = "SELECT * From Entrepot";
+	$query = "SELECT * FROM Entrepot";
 	database_connect();
 	$result = database_query($query);
 	while($row = $result->fetch()){

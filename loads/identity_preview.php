@@ -3,7 +3,7 @@
 	$id = $_GET['id'];
 	database_connect();
 
-	$query = "SELECT * from Identite  where NumTVA = '$id'";
+	$query = "SELECT * FROM Identite  WHERE NumTVA = '$id'";
 	$res = database_query($query);
 	$row = $res->fetch();
 	echo '<div id="prod_detail">';

@@ -10,7 +10,7 @@
 			<?php
 			include("utils/database_connection.php");
 			database_connect();
-			$query = "SELECT RefInterne, Sum(Prix*Quantite) as somme, Sum(Quantite) as quantite FROM Vente JOIN Transaction JOIN Composition 
+			$query = "SELECT RefInterne, Sum(Prix*Quantite) as somme, Sum(Quantite) AS quantite FROM Vente JOIN Transaction JOIN Composition 
 			WHERE Transaction.IdTran=Vente.IdTran AND Transaction.IdTran=Composition.IdTran AND Transaction.Date+0 > CURDATE()-30 
 			GROUP BY RefInterne
 			ORDER BY  Sum(Quantite) DESC 

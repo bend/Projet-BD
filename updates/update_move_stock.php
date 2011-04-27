@@ -12,7 +12,7 @@ $query2 = "SELECT * from Stock Where NomE='$to' and RefInterne='$prod'";
 database_edit($query);
 $check = database_query($query2);
 if($check->rowCount()==0){
-$query3 = "INSERT INTO STOCK.Stock(NomE, RefInterne, Quantite) VALUES ('$to', '$prod' , 0)";
+$query3 = "INSERT INTO Stock(NomE, RefInterne, Quantite) VALUES ('$to', '$prod' , 0)";
 database_edit($query3);
 }
 $query4 = "UPDATE Stock SET Quantite=Stock.Quantite+'$quantity' WHERE RefInterne='$prod' AND NomE='$to'";
