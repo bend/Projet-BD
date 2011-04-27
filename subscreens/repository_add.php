@@ -43,7 +43,7 @@
 			</li>   
 		</ol>   
 	</fieldset>   
-	<input type="button" value="Submit" onclick="javascript:add_repo();"/>
+	<input type="button" value="Add" onclick="javascript:add_repo();"/>
 	<div id="loading"></div>
 </fieldset>
 

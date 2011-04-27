@@ -63,7 +63,7 @@
 			</li>   
 		</ol>   
 	</fieldset>
-	<input type="button" id="button_ok" disabled="true" value="Submit" onclick="javascript:update_client();"/>
+	<input type="button" id="button_ok" disabled="true" value="Edit" onclick="javascript:update_client();"/>
 	<div id="loading"></div>
 </fieldset>
 

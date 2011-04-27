@@ -63,6 +63,6 @@
 			);" href="javascript:;"/>Choose a picture</a>
 
 		</li>   
-		<input type="button" value="Submit" onclick="javascript:add_product();"/>
+		<input type="button" value="Add" onclick="javascript:add_product();"/>
 		<div id="loading"></div>
 	</fieldset>

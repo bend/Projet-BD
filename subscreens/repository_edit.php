@@ -50,7 +50,7 @@
 			</li>   
 		</ol>   
 	</fieldset>   
-	<input type="button" value="Submit" id="button_ok" disabled="true" onclick="javascript:update_repository();"/>
+	<input type="button" value="Edit" id="button_ok" disabled="true" onclick="javascript:update_repository();"/>
 	<div id="loading"></div>
 </fieldset>
 

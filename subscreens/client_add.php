@@ -52,7 +52,7 @@
 			</li>   
 		</ol>   
 	</fieldset>
-	<input type="button" value="Submit" onclick="javascript:add_clients();"/>
+	<input type="button" value="Add" onclick="javascript:add_clients();"/>
 	<div id="loading"></div>
 </fieldset>
 
