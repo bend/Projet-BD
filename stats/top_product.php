@@ -16,8 +16,14 @@ $day_to = $_GET['day_to'];
 database_connect();
 
 
-$date_from = new DateTime();
-$date_to = new DateTime();
+try {
+	date_default_timezone_set('Europe/Brussels');
+    $date_from = new DateTime();
+	$date_to = new DateTime();
+}catch (Exception $e) {
+	echo $e->getMessage();
+	exit(1);
+}
 $date_from->setDate($year_from, $month_from, $day_from);
 $date_to->setDate($year_to, $month_to, $day_to);
 $query = "SELECT RefInterne, Marque,Denomination,Sum(Quantite) as q FROM Transaction NATURAL JOIN Composition NATURAL JOIN TypeProduit WHERE Date<".$date_to->format('Ymd')."+0 AND Date >".$date_from->format('Ymd')."+0 AND IdTran IN (SELECT IdTran FROM Vente) GROUP BY RefInterne ORDER BY q DESC LIMIT ".$n;

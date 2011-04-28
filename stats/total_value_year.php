@@ -12,7 +12,13 @@ database_connect();
 $title = "Total value of the company on the chosen year (Assets - Liabilities)";
 
 
-$date = new DateTime();
+try {
+	date_default_timezone_set('Europe/Brussels');
+    $date = new DateTime();
+}catch (Exception $e) {
+	echo $e->getMessage();
+	exit(1);
+}
 $date->setDate($year_from, 1, 1);
 
 $querypastvente = "SELECT SUM(Prix*Quantite) FROM Vente JOIN Transaction JOIN Composition WHERE Transaction.IdTran=Vente.IdTran AND Transaction.IdTran=Composition.IdTran AND Transaction.Date+0 < ".$date->format('Ymd')."+0";

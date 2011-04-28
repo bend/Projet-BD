@@ -3,7 +3,7 @@
 $bdd;
 function database_connect(){
 $username = 'root';
-$password = 'root';
+$password = '';
 $dbname = 'STOCK';
 $host = 'localhost';
 

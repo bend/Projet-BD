@@ -15,10 +15,19 @@ database_connect();
 
 $title = "Profit made on a day of a week (diff between sale price and purchase price)";
 
+try {
+	date_default_timezone_set('Europe/Brussels');
+    $date = new DateTime();
+	$dateEnd = new DateTime();
+}catch (Exception $e) {
+	echo $e->getMessage();
+	exit(1);
+}
+
+
+
 $day_from = $week_from*7;
-$date = new DateTime();
 $date->setDate($year_from, $month_from, $day_from);
-$dateEnd = new DateTime();
 $dateEnd->setDate($year_from, $month_from, ($day_from+1));
 
 for($i=0; $i<7;$i++){

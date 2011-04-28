@@ -11,9 +11,15 @@ $day_from = 01;
 database_connect();
 
 $title = "Profits earned per month over a year (diff betwwen selling price of sales of the month and the purchase price)";
-$date = new DateTime();
+try {
+	date_default_timezone_set('Europe/Brussels');
+    $date = new DateTime();
+	$dateEnd = new DateTime();
+}catch (Exception $e) {
+	echo $e->getMessage();
+	exit(1);
+}
 $date->setDate($year_from, $month_from, $day_from);
-$dateEnd = new DateTime();
 $dateEnd->setDate($year_from, $month_from+1, $day_from);
 
 for($i=0; $i<12;$i++){
@@ -37,7 +43,6 @@ if($resultvente[$i][0]=="") $resultvente[$i]=0;
 else $resultvente[$i]=$resultvente[$i][0];
 
 $benef[$i]=$resultvente[$i]-$resultValeurAachat[$i];
-//echo $benef[$i];
 }
 
 
