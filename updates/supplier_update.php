@@ -11,7 +11,7 @@ $country=$_POST['country'];
 $banckrupt=$_POST['banckrupt'];
 database_connect();
 $query = "UPDATE Identite SET Nom='$name',Prenom='$surname' ,Rue='$roadname', Numero='$roadnum', Localite='$town', CodePostal='$pcode', Pays='$country' WHERE NumTVA='$vatnum'";
-$query2 = "UPDATE Fournisseur SET Faillite='$banckrupt'";
+$query2 = "UPDATE Fournisseur SET Faillite='$banckrupt' WHERE NumTVA='$vatnum'";
 database_edit($query);
 database_edit($query2);
 //TODO ADD BETTER VISUAL

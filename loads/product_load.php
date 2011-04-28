@@ -26,6 +26,7 @@ echo '#@%';
 echo $row['TVA'];
 echo '#@%';
 echo $row['Img'];
-
+echo '#@%';
+echo $row['Actif'];
 ?>
 

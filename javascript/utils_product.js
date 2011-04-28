@@ -74,6 +74,10 @@ function load_product(ref){
 	document.getElementById("imgpath").value = array[9];
 	document.getElementById("imgpath").src = array[9];
 	document.getElementById("zoom_img").href = array[9];
+	if(array[10] == 1)
+		document.getElementById("active").value= "YES";
+	else
+		document.getElementById("active").value= "NO";
 	document.getElementById("loading").innerHTML="";
 	document.getElementById("button_ok").disabled = false;
 
@@ -93,11 +97,22 @@ function update_product(){
 		return;
 	}
 
+
+	var active=0;
+	if(document.getElementById("active").value == 'YES')
+		active=1;
+	else if(document.getElementById("active").value =='NO' || document.getElementById("banckrupt").value =="" )
+		active=0;
+	else{
+		document.getElementById("loading").innerHTML= "";
+		return;
+	}
+
 	var xmlHttp=GetXmlHttpObject();
 	var url="updates/product_update.php";
 	var parameters = "ref=" + encodeURI(document.getElementById("ref").value) +"&brand=" + 
 		encodeURI(document.getElementById("brand").value)+"&denom=" + encodeURI(document.getElementById("denom").value)+"&description=" + encodeURI(document.getElementById("description").value)+"&contenance=" + 	encodeURI(document.getElementById("contenance").value)+"&barcode=" + encodeURI(document.getElementById("barcode").value)+"&sellprice=" + encodeURI(document.getElementById("sellprice").value)+"&buyprice=" +
-		encodeURI(document.getElementById("buyprice").value)+"&vatrate=" + encodeURI(document.getElementById("vatrate").value) + "&imgpath=" + encodeURI(document.getElementById("imgpath").value);
+		encodeURI(document.getElementById("buyprice").value)+"&vatrate=" + encodeURI(document.getElementById("vatrate").value) + "&imgpath=" + encodeURI(document.getElementById("imgpath").value) + "&active="+encodeURI(active);
 	xmlHttp.open('POST', url, false);
 	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlHttp.setRequestHeader("Content-length", parameters.length);

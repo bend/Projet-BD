@@ -4,12 +4,12 @@ $cart=$_POST['cart'];
 $client=$_POST['client'];
 database_connect();
 //------------------------------------Execute once---------------------------------------------------
-$query1 = "INSERT INTO STOCK.Transaction(NumTVA, Date, Heure) VALUES ('$client', CURDATE(), CURTIME())";
+$query1 = "INSERT INTO Transaction(NumTVA, Date, Heure) VALUES ('$client', CURDATE(), CURTIME())";
 database_edit($query1);
 
 $last_id = database_getlast_inserted_id();
 
-$query2 = "INSERT INTO STOCK.Vente(IdTran) VALUES('$last_id')"; 
+$query2 = "INSERT INTO Vente(IdTran) VALUES('$last_id')"; 
 database_query($query2);
 //----------------------------------------------------------------------------------------------------
 

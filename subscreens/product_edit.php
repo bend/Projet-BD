@@ -59,6 +59,12 @@
 		<span id="vat_ok"></span>
 		</li>   
 		<li>   
+		<label for="active">Active(*)</label>   
+		<input id="active" name="active" class="text"   
+		type="text" onblur="javascript:check_isbool(this.value,'active_ok');" />   
+		<span id="active_ok"></span>
+		</li>   
+		<li>   
 		<label for="imgpath">Path To Image</label>  
 		<a id="zoom_img" href="javascript:;" hidden="true"></a>
 		<input id="imgpath" name="imgpath" class="text"/>
