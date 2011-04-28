@@ -58,7 +58,7 @@ function check_vat_both(str){
 
 function check_isnum(str, id){
 	if(!is_num(str)){
-		document.getElementById(id).innerHTML="You must enter a number";
+		document.getElementById(id).innerHTML="You must enter a positive number";
 		show("#"+id);
 	}else{
 		document.getElementById(id).innerHTML="";
@@ -66,7 +66,7 @@ function check_isnum(str, id){
 }
 
 function is_num(str){
-	return !isNaN(str);
+	return !isNaN(str) && str>0;
 }
 
 function check_isbool(val,id){
