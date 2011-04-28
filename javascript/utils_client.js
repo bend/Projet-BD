@@ -2,8 +2,8 @@
 function add_clients(){
 	// TODO DO BETTER CHECK HERE
 	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
-	if(document.getElementById("name").value=="" || document.getElementById("vatnum").value == "" || document.getElementById("roadname").value==""){
-		alert("Please fill Name, VAT and road fields");
+	if(document.getElementById("name").value=="" || document.getElementById("vatnum").value == "" || document.getElementById("roadname").value=="" || document.getElementById("roadnumber").value=="" || document.getElementById("suburb").value=="" || document.getElementById("country").value==""){
+		alert("Please fill all required fields");
 		document.getElementById("loading").innerHTML= "";
 		return;
 	}
@@ -14,6 +14,13 @@ function add_clients(){
 		return;
 	}
 
+	/* Check the format of vat num */
+	if(!is_valid_vat_num(document.getElementById("vatnum").value)){
+		document.getElementById("loading").innerHTML="";
+		document.getElementById("available").innerHTML="Invalid VAT Number";
+		show("#available");
+		return;
+	}
 
 	/* Check the uniqueness of the VAT NUM */
 	xmlHttp=GetXmlHttpObject();
@@ -56,6 +63,12 @@ function add_clients(){
 
 
 function check_numvat_client(str){
+	if(!is_valid_vat_num(str)){
+		document.getElementById("available").innerHTML="Invalid VAT Number";
+		show("#available");
+		return;
+	}
+	
 	if (str.length==0){
 		document.getElementById("available").innerHTML="";
 		show("#available");
@@ -110,9 +123,10 @@ function load_client(numtva){
 
 
 function update_client(){
+	
 	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
-	if(document.getElementById("name").value=="" || document.getElementById("vatnum").value == "" || document.getElementById("roadname").value==""){
-		alert("Please fill Name, VAT and road fields");
+	if(document.getElementById("name").value=="" || document.getElementById("vatnum").value == "" || document.getElementById("roadname").value=="" || document.getElementById("roadnumber").value=="" || document.getElementById("suburb").value=="" || document.getElementById("country").value==""){
+		alert("Please fill all required fields");
 		document.getElementById("loading").innerHTML= "";
 		return;
 	}

@@ -27,13 +27,13 @@
 			type="text" />   
 			</li>   
 			<li>   
-			<label for="RoadNumber">Road number:</label>   
+			<label for="RoadNumber">Road number(*):</label>   
 			<input id="roadnumber" name="roadnumber" class="text"   
 			type="text" onblur="javascript:check_isnum(this.value,'road_num_ok');"/>   
 			<span id="road_num_ok"></span>
 			</li>   
 			<li>   
-			<label for="suburb">Suburb/Town:</label>   
+			<label for="suburb">Suburb/Town(*):</label>   
 			<input id="suburb" name="suburb" class="text"   
 			type="text" />   
 			</li>   
@@ -45,7 +45,7 @@
 			</li>  
 
 			<li>   
-			<label for="country">Country:</label>   
+			<label for="country">Country(*):</label>   
 			<input id="country" name="country" class="text"   
 			type="text" /> 
 			<input type="hidden" id="banckrupt"/>

@@ -14,20 +14,26 @@ function GetXmlHttpObject(){
 
 
 function add_supplier(){
-	// TODO DO BETTER CHECK HERE
+	/* Check that numbers are numbers */
+
 	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
-	if(document.getElementById("name").value=="" || document.getElementById("vatnum").value == "" || document.getElementById("roadname").value==""){
-		alert("Please fill Name, VAT and road fields");
+	if(document.getElementById("name").value=="" || document.getElementById("vatnum").value == "" || document.getElementById("roadname").value=="" || document.getElementById("roadnumber").value=="" || document.getElementById("suburb").value=="" || document.getElementById("country").value==""){
+		alert("Please fill all required fields");
 		document.getElementById("loading").innerHTML= "";
 		return;
 	}
-	/* Check that numbers are numbers */
-
 	if(!is_num(document.getElementById("postcode").value) || !is_num(document.getElementById("roadnumber").value)){
 		document.getElementById("loading").innerHTML = "";
 		return;
 	}
 
+	/* Check the format of vat num */
+	if(!is_valid_vat_num(document.getElementById("vatnum").value)){
+		document.getElementById("loading").innerHTML="";
+		document.getElementById("available").innerHTML="Invalid VAT Number";
+		show("#available");
+		return;
+	}
 
 	/* Check the uniqueness of the VAT NUM */
 	xmlHttp=GetXmlHttpObject();
@@ -71,14 +77,12 @@ function add_supplier(){
 
 
 function update_supplier(){
-	// TODO DO BETTER CHECK HERE
 	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
-	if(document.getElementById("name").value=="" || document.getElementById("vatnum").value == "" || document.getElementById("roadname").value==""){
-		alert("Please fill Name, VAT and road fields");
+	if(document.getElementById("name").value=="" || document.getElementById("vatnum").value == "" || document.getElementById("roadname").value=="" || document.getElementById("roadnumber").value=="" || document.getElementById("suburb").value=="" || document.getElementById("country").value==""){
+		alert("Please fill all required fields");
 		document.getElementById("loading").innerHTML= "";
 		return;
 	}
-	/* Check that numbers are numbers */
 
 	if(!is_num(document.getElementById("postcode").value) || !is_num(document.getElementById("roadnumber").value)){
 		document.getElementById("loading").innerHTML = "";
@@ -118,6 +122,11 @@ function update_supplier(){
 }
 
 function check_numvat_supplier(str){
+	if(!is_valid_vat_num(str)){
+		document.getElementById("available").innerHTML="Invalid VAT Number";
+		show("#available");
+		return;
+	}
 	if (str.length==0){
 		document.getElementById("available").innerHTML="";
 		show("#available");

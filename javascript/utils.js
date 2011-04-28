@@ -98,3 +98,9 @@ function preview_img(){
 	var url= document.getElementById("imgpath").src;
 	document.getElementById("image_preview").innerHTML='<img src="'+url+'"/>';
 }
+
+function is_valid_vat_num(vatnum){
+	if(!isNaN(vatnum.charAt(0)) || !isNaN(vatnum.charAt(1)) ||vatnum.length<6)
+		return false;
+	return true;
+}
