@@ -66,7 +66,7 @@ function check_isnum(str, id){
 }
 
 function is_num(str){
-	return !isNaN(str) && str>0;
+	return str=="" || (!isNaN(str) && str>=0);
 }
 
 function check_isbool(val,id){

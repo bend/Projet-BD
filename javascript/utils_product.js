@@ -134,7 +134,7 @@ function check_ref(str){
 		return;
 	}
 	if(!is_num(str)){
-		document.getElementById("available").innerHTML="You must enter a number";
+		document.getElementById("available").innerHTML="You must enter a positive a number";
 		show("#available");
 		return;
 	}
