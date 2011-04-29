@@ -1,5 +1,5 @@
 <?php
-$query = " SELECT RefInterne FROM TypeProduit WHERE Actif=1";
+$query = " SELECT RefInterne FROM TypeProduit WHERE Actif=1 ORDER By RefInterne";
 database_connect();
 $res = database_query($query);
 echo '<FORM>';

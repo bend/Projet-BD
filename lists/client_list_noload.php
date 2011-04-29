@@ -1,5 +1,5 @@
 <?php
-$query = " SELECT NumTVA FROM Client";
+$query = " SELECT NumTVA FROM Client ORDER BY NumTVA";
 database_connect();
 $res = database_query($query);
 echo '<FORM>';

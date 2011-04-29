@@ -1,5 +1,5 @@
 <?php
-$query = " SELECT NumTVA FROM Client WHERE DateDernierAchat>CURDATE()-730";
+$query = " SELECT NumTVA FROM Client WHERE DateDernierAchat>CURDATE()-730 ORDER BY NumTVA";
 database_connect();
 $res = database_query($query);
 echo '<FORM>';

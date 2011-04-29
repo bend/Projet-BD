@@ -1,5 +1,5 @@
 <?php
-$query = "SELECT RefInterne FROM Stock  WHERE Quantite >0 GROUP BY RefInterne ";
+$query = "SELECT RefInterne FROM Stock WHERE Quantite >0 GROUP BY RefInterne ORDER BY RefInterne";
 database_connect();
 $res = database_query($query);
 echo '<FORM>';
