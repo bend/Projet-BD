@@ -25,7 +25,7 @@
 								echo '<a id="zoom_img" href="loads/identity_preview.php?id=';
 									echo $row['NumTVA'];
 									echo '"/>VAT Number:	';
-									echo $row2['NumTVA'];
+									echo $row['NumTVA'];
 									echo '</a><br/>Date: ';
 								echo $row['Date'];
 								echo ' ';
@@ -49,7 +49,7 @@
 								echo '<a id="zoom_img" href="loads/identity_preview.php?id=';
 									echo $row['NumTVA'];
 									echo '"/>VAT Number:	';
-									echo $row2['NumTVA'];
+									echo $row['NumTVA'];
 									echo '</a><br/>Date: ';
 								echo $row['Date'];
 								echo ' ';
