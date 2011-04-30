@@ -1,5 +1,3 @@
-
-
 function load_repository(name){
 	document.getElementById("loading").innerHTML= "<img src=\"img/loading.gif\" alt=\"click\"/>";
 	xmlHttp=GetXmlHttpObject();

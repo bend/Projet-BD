@@ -1,12 +1,12 @@
-
 <div id="sub_menu">
 	<?php
 	require("sub_menu/sub_menu_default.php");
 	?>
 </div>
 <div id="screen_body">
-	<fieldset>
-		<legend>Welcome</legend>
+	<div id="warnings">
+		<fieldset>
+			<legend>Welcome</legend>
 			<fieldset>
 				<legend>Last Transactions</legend>
 				<?php
@@ -22,9 +22,11 @@
 							$res2 = database_query($total);
 							$row2 = $res2->fetch();
 							echo '<fieldset>';
-								echo 'VAT Number: ';
-								echo $row['NumTVA'];
-								echo '<br/>Date: ';
+								echo '<a id="zoom_img" href="loads/identity_preview.php?id=';
+									echo $row['NumTVA'];
+									echo '"/>VAT Number:	';
+									echo $row2['NumTVA'];
+									echo '</a><br/>Date: ';
 								echo $row['Date'];
 								echo ' ';
 								echo $row['Heure'];
@@ -44,9 +46,11 @@
 							$res2 = database_query($total);
 							$row2 = $res2->fetch();
 							echo '<fieldset>';
-								echo 'VAT Number: ';
-								echo $row['NumTVA'];
-								echo '<br/>Date: ';
+								echo '<a id="zoom_img" href="loads/identity_preview.php?id=';
+									echo $row['NumTVA'];
+									echo '"/>VAT Number:	';
+									echo $row2['NumTVA'];
+									echo '</a><br/>Date: ';
 								echo $row['Date'];
 								echo ' ';
 								echo $row['Heure'];
@@ -59,6 +63,6 @@
 				?>
 
 			</fieldset>
-	</fieldset>
+		</fieldset>
+	</div>
 </div>
-
