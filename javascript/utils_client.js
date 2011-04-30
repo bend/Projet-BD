@@ -87,7 +87,7 @@ function check_numvat_client(str){
 		document.getElementById("available").innerHTML=xmlHttp.responseText;
 		show("#available");
 		var temp = xmlHttp.responseText;
-		if(check_vat_both(str)==true && temp=="")
+		if(check_vat_both(str)==true && trim(temp)=="")
 			load_client(document.getElementById("vatnum").value);
 		return;
 	}

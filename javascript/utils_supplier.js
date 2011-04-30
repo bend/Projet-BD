@@ -145,7 +145,7 @@ function check_numvat_supplier(str){
 		document.getElementById("available").innerHTML=xmlHttp.responseText;
 		show("#available");
 		var temp = xmlHttp.responseText;
-		if(check_vat_both(str)==true && temp=="")
+		if(check_vat_both(str)==true && trim(temp)=="")
 			load_supplier(document.getElementById("vatnum").value);
 		return;
 	}
@@ -220,9 +220,4 @@ function load_sup(id){
 	load_subscreen('subscreens/supplier_view.php');
 	load_supplier(id);
 }
-
-
-
-
-
 
