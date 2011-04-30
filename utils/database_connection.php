@@ -41,19 +41,6 @@ function database_getlast_inserted_id(){
 	return $bdd->lastInsertId();
 }
 
-function database_close(){
-	global $bdd;
-	$bdd = null;
-}
 
-function database_begin_tr(){
-	global $bdd;
-	$bdd->beginTransaction();	
-}
 
-function database_commit_tr(){
-	global $bdd;
-	$bdd->commit();
-}
 ?>
- 
