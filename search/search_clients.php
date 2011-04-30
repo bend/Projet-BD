@@ -3,7 +3,7 @@
 include("../utils/database_connection.php");
 
 $searched_data = $_REQUEST['search'];
-$query_1 = "SELECT * FROM Identite WHERE (Nom like '%$searched_data%' OR Prenom like '%$searched_data%') AND NumTVA in (Select NumTVA from Client)";
+$query_1 = "SELECT * FROM Identite WHERE (Nom like '%$searched_data%' OR Prenom like '%$searched_data%' OR CONCAT(Prenom,' ',Nom) Like'%$searched_data%') AND NumTVA in (Select NumTVA from Client)";
 database_connect();
 $res1 = database_query($query_1);
 if($res1->rowCount()>0){

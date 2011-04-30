@@ -104,3 +104,8 @@ function is_valid_vat_num(vatnum){
 		return false;
 	return true;
 }
+
+function trim(str) {
+	return str.replace(/^\s+|\s+$/g,"");
+}
+

@@ -41,17 +41,19 @@ function database_getlast_inserted_id(){
 	return $bdd->lastInsertId();
 }
 
-
-/*database_connect();
-echo 'ok';
-echo 'ok';
-$requete_prepare_1=database_query("SELECT * from test");
-while($lignes=$requete_prepare_1->fetch(PDO::FETCH_OBJ))
-{
-	        echo 'res' .$lignes->t.'<br />';
+function database_close(){
+	global $bdd;
+	$bdd = null;
 }
 
+function database_begin_tr(){
+	global $bdd;
+	$bdd->beginTransaction();	
+}
 
-
+function database_commit_tr(){
+	global $bdd;
+	$bdd->commit();
+}
 ?>
- */
+ 
