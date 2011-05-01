@@ -225,6 +225,10 @@ body a:hover
 	background-color:RGB(109,109,109);
 }
 
+#footer a{
+	text-decoration:none;
+}
+
 #map{
 	padding:1%;
 	width:98%;

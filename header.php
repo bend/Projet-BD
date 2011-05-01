@@ -7,7 +7,8 @@
 <link rel="stylesheet" type="text/css" media="screen" href="style_sheet.css" />
 <link rel="stylesheet" type="text/css" href="utils/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
 <script type="text/javascript" src="javascript/jquery-1.5.1.min.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=API_KEY"></script>
+<script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAW97U7O3d-bTLXyvBy4vr2BQ-a5yGAL2NNEWzVw-WHJ8ENyWuGhSgNREo7STT5oE1TXINl14hSfZyPQ
+"></script>
 <script type="text/javascript" src="javascript/jquery.gmap-1.1.0.js"></script>
 <script type="text/javascript" src="javascript/utils.js"></script>
 <script type="text/javascript" src="javascript/utils_client.js"></script>
