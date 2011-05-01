@@ -10,9 +10,9 @@
 
 
 <script type="text/javascript">
-	var currentDate = new Date()
-	var day = currentDate.getDate()
-	var month = currentDate.getMonth()
-	var year = currentDate.getFullYear()
-	document.getElementById("date").innerHTML = ( day + "/" + month + "/" + year )
+	var currentDate = new Date();
+	var day = currentDate.getDate();
+	var month = currentDate.getMonth() +1;
+	var year = currentDate.getFullYear();
+	document.getElementById("date").innerHTML = ( day + "/" + month + "/" + year );
 </script>
