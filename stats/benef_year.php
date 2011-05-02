@@ -10,7 +10,7 @@ $day_from = 01;
 
 database_connect();
 
-$title = "Profits earned per month over a year (diff betwwen selling price of sales of the month and the purchase price)";
+$title = "Profits earned per month over a year (diff between selling price of sales of the month and the purchase price)";
 try {
 	date_default_timezone_set('Europe/Brussels');
     $date = new DateTime();

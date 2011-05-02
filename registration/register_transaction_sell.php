@@ -3,6 +3,32 @@ include("../utils/database_connection.php");
 $cart=$_POST['cart'];
 $client=$_POST['client'];
 database_connect();
+
+$array = explode("|",$cart); // Get the tuple(product#quantity#repo);
+
+//------------------------------------Lock Tales---------------------------------------------------
+	$lock = "LOCK TABLES Transaction WRITE, Composition WRITE, Stock WRITE, Client WRITE, Vente WRITE, TypeProduit READ";
+	database_query($lock);
+
+//-------------------------------------------------------------------------------------------------
+
+//------------------------------------Check that the stock is still available-----------------------
+
+	foreach($array as $tuple){
+		$t = explode("#",$tuple);
+		$product = $t[0];
+		$quantity= $t[1];
+		$repo = $t[2];
+		$query3 = "SELECT * FROM Stock WHERE NomE='$repo' AND RefInterne='$product'";
+		$res = database_query($query3);
+		$row = $res->fetch();
+		if($row['Quantite']<$quantity){
+			echo 'The Stock is too low, the transaction cannot be fulfilled';
+			return;
+		}
+	}
+//-------------------------------------------------------------------------------------------------
+
 //------------------------------------Execute once---------------------------------------------------
 $query1 = "INSERT INTO Transaction(NumTVA, Date, Heure) VALUES ('$client', CURDATE(), CURTIME())";
 database_edit($query1);
@@ -14,7 +40,6 @@ database_query($query2);
 //----------------------------------------------------------------------------------------------------
 
 
-$array = explode("|",$cart); // Get the tuple(product,quantity,repo);
 $tuple = $array[0];
 
 foreach ($array as $tuple){
@@ -39,7 +64,10 @@ foreach ($array as $tuple){
 
 $query7 = "UPDATE Client SET DateDernierAchat=CURDATE() WHERE NumTVA='$client'";
 database_edit($query7);
-
-//TODO ADD BETTER VISUAL
-echo "Transaction added";
+//-----------------------UNLOCK---------------------------
+$unlock = "UNLOCK TABLES";
+database_query($unlock);
+//--------------------------------------------------------
+echo "Transaction added<br/>";
+echo 'Id: '.$last_id;
 ?>

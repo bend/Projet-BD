@@ -5,6 +5,13 @@ $supplier=$_POST['supplier'];
 $repo=$_POST['repo'];
 
 database_connect();
+
+//------------------------------------Lock Tales---------------------------------------------------
+	$lock = "LOCK TABLES Transaction WRITE, Composition WRITE, Stock WRITE, Fournisseur WRITE, Achat WRITE, TypeProduit READ";
+	database_query($lock);
+
+//-------------------------------------------------------------------------------------------------
+
 //------------------------------------Execute once---------------------------------------------------
 $query1 = "INSERT INTO Transaction(NumTVA, Date, Heure) VALUES ('$supplier', CURDATE(), CURTIME())";
 database_edit($query1);
@@ -12,7 +19,7 @@ database_edit($query1);
 $last_id = database_getlast_inserted_id();
 
 $query2 = "INSERT INTO Achat(IdTran) VALUES('$last_id')"; 
-database_query($query2);
+database_edit($query2);
 //----------------------------------------------------------------------------------------------------
 
 
@@ -50,7 +57,11 @@ foreach ($array as $tuple){
 	$query6 = "UPDATE Stock SET Quantite=Stock.Quantite+'$quantity' WHERE RefInterne='$product' AND NomE='$repo'";
 	database_edit($query6);
 }
-
+//-----------------------UNLOCK---------------------------
+$unlock = "UNLOCK TABLES";
+database_query($unlock);
+//--------------------------------------------------------
 //TODO ADD BETTER VISUAL
-echo "Transaction added";
+echo "Transaction added<br/>";
+echo 'Id: '.$last_id;
 ?>

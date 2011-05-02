@@ -1,7 +1,7 @@
 <?php
 	include("../utils/database_connection.php");
 	$val = $_POST['val'];
-	$query = "SELECT * From Transaction NATURAL JOIN Composition WHERE IdTran LIKE '$val' OR NumTVA LIKE '$val%' OR RefInterne LIKE '$val%' OR Date LIKE '%$val%' OR RefInterne in (SELECT RefInterne FROM TypeProduit WHERE Marque LIKE '%$val%' OR Denomination LIKE '%$val%') GROUP BY IdTran";
+	$query = "SELECT Transaction.IdTran as IdTran, Date, Heure From Transaction JOIN Composition WHERE Transaction.IdTran LIKE '$val' OR NumTVA LIKE '$val%' OR RefInterne LIKE '$val%' OR Date LIKE '%$val%' OR RefInterne in (SELECT RefInterne FROM TypeProduit WHERE Marque LIKE '%$val%' OR Denomination LIKE '%$val%') GROUP BY Transaction.IdTran";
 	database_connect();
 	$res = database_query($query);
 	if($res->rowCount()==0)
