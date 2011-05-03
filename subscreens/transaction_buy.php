@@ -14,7 +14,7 @@
 				<a class="load" hidden="true" id="fancy" href="javascript:;" >preview product</a>
 				</li>
 				<label for="Quantity">Quantity</label>
-				<input id="quantity" name="quantity" class="text" type="text" onblur="javascript:check_isnum(this.value,'quantity_ok');"/>
+				<input id="quantity" name="quantity" class="text" type="text" onblur="javascript:check_is_int(this.value,'quantity_ok');"/>
 				<span id="quantity_ok"></span>
 			</fieldset>
 			</li>
@@ -30,7 +30,7 @@
 		<ol>   
 			<li>
 			<?php
-			include("../lists/supplier_list_noload.php");
+			include("../lists/supplier_list_active_noload.php");
 			?>	
 			</li>
 		</ol>

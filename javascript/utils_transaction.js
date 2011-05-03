@@ -65,7 +65,7 @@ function add_to_cart(){
 	var item = document.getElementById("product_list").value;
 	var quantity = document.getElementById("quantity").value;
 	var old = document.getElementById("cart").value;
-	if(!is_num(quantity) || item=="-----"){
+	if(!is_int(quantity) || item=="-----"){
 		document.getElementById("add_ok").innerHTML = "Please check values";
 		$("#add_ok").fadeIn(100);
 		$("#add_ok").fadeOut(1500); 	
@@ -170,3 +170,5 @@ function enable_fancy(){
 		'transitionOut'	: 'elastic'
 	});
 }
+
+

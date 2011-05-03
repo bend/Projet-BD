@@ -9,7 +9,7 @@
 		<?php
 		include("utils/database_connection.php");
 		database_connect();
-		$query = "SELECT * FROM Stock WHERE Quantite<3";
+		$query = "SELECT * FROM Stock WHERE Quantite<10";
 		$res = database_query($query);
 		if($res->rowCount()>0){
 		echo '<div id="warnings"><div class="warning">Stocks are getting low in:</div> ';	

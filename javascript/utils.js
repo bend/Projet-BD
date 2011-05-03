@@ -109,3 +109,16 @@ function trim(str) {
 	return str.replace(/^\s+|\s+$/g,"");
 }
 
+
+function check_is_int(str, id){
+	if(!is_int(str) || str.length>0){
+		document.getElementById(id).innerHTML="You must enter a positive number";
+		show("#"+id);
+	}else{
+		document.getElementById(id).innerHTML="";
+	}
+}
+
+function is_int(str){
+	return str=="" || (!isNaN(str) && str>0 && str.indexOf(".")==-1);
+}

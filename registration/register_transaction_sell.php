@@ -38,7 +38,7 @@ database_edit($query1);
 $last_id = database_getlast_inserted_id();
 
 $query2 = "INSERT INTO Vente(IdTran) VALUES('$last_id')"; 
-database_query($query2);
+database_edit($query2);
 //----------------------------------------------------------------------------------------------------
 
 

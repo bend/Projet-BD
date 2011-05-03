@@ -33,7 +33,7 @@ CREATE TABLE  STOCK.Client (
 );
 
 CREATE TABLE STOCK.TypeProduit(
-	RefInterne INT  NOT NULL PRIMARY KEY ,
+	RefInterne VARCHAR(20)  NOT NULL PRIMARY KEY ,
 	Marque TEXT ,
 	Denomination TEXT ,
 	Description TEXT ,
@@ -83,7 +83,7 @@ CREATE TABLE  STOCK.Vente (
 
 CREATE TABLE  STOCK.Composition(
 	IdTran INT NOT NULL ,
-	RefInterne INT NOT NULL,
+	RefInterne VARCHAR(20) NOT NULL,
 	Prix FLOAT NOT NULL ,
 	Quantite INT NOT NULL,
 	Foreign Key (IdTran) references STOCK.Transaction(IdTran),
@@ -92,7 +92,7 @@ CREATE TABLE  STOCK.Composition(
 
 CREATE TABLE  STOCK.Stock (
 	NomE VARCHAR( 30 ) NOT NULL ,
-	RefInterne INT NOT NULL ,
+	RefInterne VARCHAR(20) NOT NULL ,
 	Quantite INT NOT NULL,
 	CONSTRAINT NR PRIMARY KEY (NomE, RefInterne),
 	Foreign Key (NomE) references STOCK.Entrepot(NomE),
