@@ -6,5 +6,5 @@
 	&nbsp
 	&nbsp
 	<a href="http://www.mysql.com"><img src="img/mysql.png"></a>
-	<a href="changelog.html">V1.8.2</a>
+	<a href="changelog.html">V1.9.2</a>
 </div>

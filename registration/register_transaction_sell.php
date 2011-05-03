@@ -24,6 +24,8 @@ $array = explode("|",$cart); // Get the tuple(product#quantity#repo);
 		$row = $res->fetch();
 		if($row['Quantite']<$quantity){
 			echo 'The Stock is too low, the transaction cannot be fulfilled';
+			$unlock = "UNLOCK TABLES";
+			database_query($unlock);
 			return;
 		}
 	}
