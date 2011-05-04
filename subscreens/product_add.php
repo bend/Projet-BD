@@ -30,7 +30,7 @@
 		<li>   
 		<label for="barcode	">BarCode(*)</label>   
 		<input id="barcode" name="barcode" class="text"   
-		type="text" onblur="javascript:check_isnum(this.value,'bar_ok');"/>   
+		type="text" onblur="javascript:check_is_int(this.value,'bar_ok');"/>   
 		<span id="bar_ok"></span>
 		</li>   
 		<li>   

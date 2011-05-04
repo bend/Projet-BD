@@ -9,7 +9,7 @@ function add_clients(){
 	}
 	/* Check that numbers are numbers */
 
-	if(!is_num(document.getElementById("postcode").value) || !is_num(document.getElementById("roadnumber").value)){
+	if(!is_int(document.getElementById("postcode").value) || !is_int(document.getElementById("roadnumber").value)){
 		document.getElementById("loading").innerHTML = "";
 		return;
 	}
@@ -132,7 +132,7 @@ function update_client(){
 	}
 	/* Check that numbers are numbers */
 
-	if(!is_num(document.getElementById("postcode").value) || !is_num(document.getElementById("roadnumber").value)){
+	if(!is_int(document.getElementById("postcode").value) || !is_int(document.getElementById("roadnumber").value)){
 		document.getElementById("loading").innerHTML = "";
 		return;
 	}

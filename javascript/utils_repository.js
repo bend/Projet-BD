@@ -33,7 +33,7 @@ function update_repository(){
 		return;
 	}
 	/* Check that the numbers are numbers */
-	if(!is_num(document.getElementById("postcode").value) || !is_num(document.getElementById("roadnumber").value) ){
+	if(!is_int(document.getElementById("postcode").value) || !is_int(document.getElementById("roadnumber").value) ){
 		document.getElementById("loading").innerHTML = "";
 		return;
 	}
@@ -66,12 +66,12 @@ function add_repo(){
 		return;
 	}
 	/* Check that the numbers are numbers */
-	if(!is_num(document.getElementById("postcode").value) || !is_num(document.getElementById("roadnumber").value) ){
+	if(!is_int(document.getElementById("postcode").value) || !is_int(document.getElementById("roadnumber").value) ){
 		document.getElementById("loading").innerHTML = "";
 		return;
 	}
 
-	/* Check the uniqueness of the Ref NUM */
+	/* Check the uniqueness of the Repo name*/
 	xmlHttp=GetXmlHttpObject();
 	if (xmlHttp==null){
 		alert ("Browser does not support HTTP Request");

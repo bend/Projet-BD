@@ -14,7 +14,7 @@
 				<a class="load" hidden="true" id="fancy" href="javascript:;" >preview product</a>
 				</li>
 				<label for="Quantity">Quantity</label>
-				<input id="quantity" name="quantity" class="text" type="text" onblur="javascript:check_is_int(this.value,'quantity_ok');"/>
+				<input id="quantity" name="quantity" class="text" type="text" onblur="javascript:check_is_notnull_int(this.value,'quantity_ok');"/>
 				<span id="quantity_ok"></span>
 			</fieldset>
 			</li>

@@ -111,8 +111,8 @@ function trim(str) {
 
 
 function check_is_int(str, id){
-	if(!is_int(str) || str.length>0){
-		document.getElementById(id).innerHTML="You must enter a positive number";
+	if(!is_int(str)){
+		document.getElementById(id).innerHTML="You must enter a positive integer";
 		show("#"+id);
 	}else{
 		document.getElementById(id).innerHTML="";
@@ -122,3 +122,17 @@ function check_is_int(str, id){
 function is_int(str){
 	return str=="" || (!isNaN(str) && str>0 && str.indexOf(".")==-1);
 }
+
+function check_is_notnull_int(str, id){
+	if(!is_notnull_int(str)){
+		document.getElementById(id).innerHTML="You must enter a positive integer";
+		show("#"+id);
+	}else{
+		document.getElementById(id).innerHTML="";
+	}
+}
+
+function is_notnull_int(str){
+	return (!isNaN(str) && str>0 && str.indexOf(".")==-1);
+}
+

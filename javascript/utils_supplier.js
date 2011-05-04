@@ -22,7 +22,7 @@ function add_supplier(){
 		document.getElementById("loading").innerHTML= "";
 		return;
 	}
-	if(!is_num(document.getElementById("postcode").value) || !is_num(document.getElementById("roadnumber").value)){
+	if(!is_int(document.getElementById("postcode").value) || !is_int(document.getElementById("roadnumber").value)){
 		document.getElementById("loading").innerHTML = "";
 		return;
 	}
@@ -84,7 +84,7 @@ function update_supplier(){
 		return;
 	}
 
-	if(!is_num(document.getElementById("postcode").value) || !is_num(document.getElementById("roadnumber").value)){
+	if(!is_int(document.getElementById("postcode").value) || !is_int(document.getElementById("roadnumber").value)){
 		document.getElementById("loading").innerHTML = "";
 		return;
 	}
