@@ -20,7 +20,7 @@ database_edit($query);
 }
 $query2 = "INSERT INTO Client(NumTVA) VALUES('$vatnum')";
 database_edit($query2);
-
+database_close();
 //TODO ADD BETTER VISUAL
 echo "Client added";
 ?>

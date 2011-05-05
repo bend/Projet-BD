@@ -10,6 +10,7 @@ $country=$_POST['country'];
 database_connect();
 $query = "UPDATE Entrepot SET Rue='$roadname', Numero='$roadnum', Localite='$town', CodePostal='$pcode', Pays='$country' WHERE NomE='$name'";
 database_edit($query);
+database_close();
 //TODO ADD BETTER VISUAL
 echo "Repository updated";
 ?>

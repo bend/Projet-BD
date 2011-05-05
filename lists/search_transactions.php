@@ -23,4 +23,5 @@
 		echo "<br/>";
 	}
 	$res->closeCursor();
+	database_close();
 ?>

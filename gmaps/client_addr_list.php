@@ -21,4 +21,5 @@
 		echo $row['Pays'];
 		echo '#@%';
 	}
+	database_close();
 ?>

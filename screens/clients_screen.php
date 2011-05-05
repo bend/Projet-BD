@@ -33,6 +33,7 @@
 				echo $row['somme'];
 				echo '</fieldset>';
 			}
+			database_close();
 			?>
 		</div>
 	</fieldset>

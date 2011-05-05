@@ -6,4 +6,5 @@
 	$result = database_query($check);
 	if($result->rowCount()>0)
 		echo "Num VAT already existing in clients";
+	database_close();
 ?>

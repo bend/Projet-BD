@@ -28,5 +28,6 @@ echo $row['Pays'];
 echo '#@%';
 echo $row2['Faillite'];
 echo '#@%';
+database_close();
 ?>
 

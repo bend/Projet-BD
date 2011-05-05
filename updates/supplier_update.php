@@ -14,6 +14,7 @@ $query = "UPDATE Identite SET Nom='$name',Prenom='$surname' ,Rue='$roadname', Nu
 $query2 = "UPDATE Fournisseur SET Faillite='$banckrupt' WHERE NumTVA='$vatnum'";
 database_edit($query);
 database_edit($query2);
+database_close();
 //TODO ADD BETTER VISUAL
 echo "Supplier updated";
 ?>

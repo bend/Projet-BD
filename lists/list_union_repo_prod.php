@@ -15,5 +15,5 @@ echo '<FORM>';
 	echo '</SELECT>';
 echo '</FORM>';
 $res->closeCursor();
-
+database_close();
 ?>

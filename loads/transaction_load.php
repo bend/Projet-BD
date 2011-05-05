@@ -1,4 +1,3 @@
-
 <?php
 include("../utils/database_connection.php");
 $val = $_GET['val'];
@@ -55,5 +54,6 @@ echo '<div id="result_load">';
 		}
 		echo '</fieldset>';
 	echo '</div>';
+database_close();
 ?>
 

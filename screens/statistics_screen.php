@@ -19,6 +19,7 @@ include("graph/phpgraphlib.php");
 		echo $row['somme'];
 		echo ' EUR';
 		echo '</fieldset>';
+	database_close();
 	?>
 		</div>
 	</fieldset>

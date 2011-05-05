@@ -10,6 +10,7 @@ $country=$_POST['country'];
 database_connect();
 $query = "INSERT INTO Entrepot(NomE, Rue, Numero, Localite, CodePostal, Pays) VALUES('$name' ,'$roadname', '$roadnum', '$town', '$pcode', '$country')";
 database_edit($query);
+database_close();
 //TODO ADD BETTER VISUAL
 echo "Repository added";
 ?>

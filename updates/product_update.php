@@ -15,6 +15,7 @@ $active = $_POST['active'];
 database_connect();
 $query = "UPDATE TypeProduit SET  Marque='$brand', Denomination='$denom', Description='$description', Contenance='$contenance', CodeBarre='$barcode', PrixVente='$sellprice', PrixAchat='$buyprice', TVA='$vatrate', Img='$imgpath' , Actif='$active' WHERE RefInterne='$ref'";
 database_edit($query);
+database_close();
 //TODO ADD BETTER VISUAL
 echo "Product updated";
 ?>

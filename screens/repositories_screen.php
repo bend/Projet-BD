@@ -25,6 +25,7 @@
 				echo '</fieldset>';
 			}
 			$res->closeCursor();
+			database_close();
 			}else
 			echo 'No Warnings';
 

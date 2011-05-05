@@ -33,6 +33,7 @@
 						echo '<br/>Total purchase amount: ';
 						echo $row['somme'];
 						echo '</fieldset>';
+					database_close();
 				}
 			}else echo 'No Warnings';
 			?>

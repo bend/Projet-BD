@@ -17,6 +17,7 @@ database_edit($query3);
 }
 $query4 = "UPDATE Stock SET Quantite=Stock.Quantite+'$quantity' WHERE RefInterne='$prod' AND NomE='$to'";
 database_edit($query4);
+database_close();
 //TODO ADD BETTER VISUAL
 echo "Stock Transfered";
 ?>

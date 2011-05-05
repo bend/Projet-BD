@@ -20,7 +20,7 @@ if($res1->rowCount()>0){
 			echo '</div>';
 	}
 }else echo'No Results';
-
+database_close();
 
 
 ?>

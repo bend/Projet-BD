@@ -17,5 +17,6 @@ echo '#@%';
 echo $row['CodePostal'];
 echo '#@%';
 echo $row['Pays'];
+database_close();
 ?>
 

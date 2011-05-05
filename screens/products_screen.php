@@ -29,6 +29,7 @@
 				echo ' EUR</fieldset>';
 			}
 			$res->closeCursor();
+			database_close();
 			?>
 		</div>
 	</fieldset>

@@ -28,5 +28,6 @@ echo '#@%';
 echo $row['Img'];
 echo '#@%';
 echo $row['Actif'];
+database_close();
 ?>
 

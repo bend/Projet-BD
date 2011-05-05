@@ -8,4 +8,5 @@
 	if($result->rowCount()>0)
 		echo true;
 	echo false;
+	database_close();
 ?>

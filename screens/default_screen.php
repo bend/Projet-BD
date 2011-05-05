@@ -60,6 +60,7 @@
 							echo '</fieldset>';
 						}
 					echo '</fieldset>';
+				database_close();
 				?>
 
 			</fieldset>

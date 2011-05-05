@@ -29,4 +29,5 @@ while($row = $res1->fetch()) {
 		echo '<br/>';
 		echo '</div>';
 }
+database_close();
 ?>

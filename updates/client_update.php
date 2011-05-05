@@ -12,6 +12,7 @@ $country=$_POST['country'];
 database_connect();
 $query = "UPDATE Identite SET Nom='$name',Prenom='$surname' ,Rue='$roadname', Numero='$roadnum', Localite='$town', CodePostal='$pcode', Pays='$country' WHERE NumTVA='$vatnum'";
 database_edit($query);
+database_close();
 //TODO ADD BETTER VISUAL
 echo "Client updated";
 ?>

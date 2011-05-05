@@ -64,7 +64,7 @@ $graph->addData($ydata);
 $graph->setTitle($title);
 $graph->setGradient('red', 'maroon');
 $graph->createGraph();
-
+database_close();
 
 
 ?>

@@ -7,4 +7,5 @@
 	$result = database_query($check);
 	if($result->rowCount()>0)
 		echo "Repo name already existing";
+	database_close();
 ?>

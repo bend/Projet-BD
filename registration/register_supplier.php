@@ -22,6 +22,7 @@ database_edit($query);
 
 $query2 = "INSERT INTO Fournisseur(NumTVA) VALUES('$vatnum')";
 database_edit($query2);
+database_close();
 //TODO ADD BETTER VISUAL
 echo "Supplier added";
 ?>

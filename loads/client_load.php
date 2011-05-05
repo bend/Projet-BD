@@ -28,5 +28,6 @@
 	echo '#@%';
 	echo $row2['DateDernierAchat'];
 	echo '#@%';
+	database_close();
 ?>
 

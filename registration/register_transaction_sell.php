@@ -70,6 +70,7 @@ database_edit($query7);
 $unlock = "UNLOCK TABLES";
 database_query($unlock);
 //--------------------------------------------------------
+database_close();
 echo "Transaction added<br/>";
 echo 'Id: '.$last_id;
 ?>

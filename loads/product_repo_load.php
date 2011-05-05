@@ -17,5 +17,6 @@ echo '<table border="1">';
 		echo '</td>';
 	echo '</tr>';
 	}
+	database_close();
 ?>
 

@@ -43,5 +43,5 @@ $graph->setTitle($title);
 $graph->setLabelTextColor('50,50,50');
 $graph->setLegendTextColor('50,50,50');
 $graph->createGraph();
-
+database_close();
 ?>

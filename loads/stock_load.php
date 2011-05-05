@@ -26,5 +26,6 @@ echo '<table border="1">';
 		</td>';
 	}
 echo '</table>';
+database_close();
 ?>
 

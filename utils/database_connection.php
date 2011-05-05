@@ -41,6 +41,9 @@ function database_getlast_inserted_id(){
 	return $bdd->lastInsertId();
 }
 
+function database_close(){
+	$bdd=null;
+}
 
 
 ?>

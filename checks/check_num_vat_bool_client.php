@@ -9,4 +9,5 @@
 		echo true;
 	else
 		echo false;
+	database_close();
 ?>

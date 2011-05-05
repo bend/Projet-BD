@@ -26,5 +26,5 @@
 	echo $row['Pays'];
 	echo '</blockquote>';
 	echo '</fieldset></div>';
-
+	database_close();
 ?>

@@ -61,6 +61,7 @@ foreach ($array as $tuple){
 $unlock = "UNLOCK TABLES";
 database_query($unlock);
 //--------------------------------------------------------
+database_close();
 //TODO ADD BETTER VISUAL
 echo "Transaction added<br/>";
 echo 'Id: '.$last_id;

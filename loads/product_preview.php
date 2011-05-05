@@ -30,5 +30,5 @@ echo '<div id="prod_detail">';
 		echo $row['Img'];
 		echo '" width="150" onerror="javascript:this.src=\'img/empty.png\';this.height=0; this.width=0;"/>';
 		echo '</fieldset></div>';
-
+		database_close();
 ?>

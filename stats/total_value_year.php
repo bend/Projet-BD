@@ -88,7 +88,7 @@ $graph->setLegendTitle("Balance","Total sales","Total purchases");
 //$graph->setDataValueColor('maroon');
 
 $graph->createGraph();
-
+database_close();
 
 	
 

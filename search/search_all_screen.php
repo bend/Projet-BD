@@ -38,8 +38,6 @@
 				echo '</div>';
 		}
 	}else echo'<br/>No Results';
-
-
-
+	database_close();
 	?>
 </div>

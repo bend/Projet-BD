@@ -16,6 +16,7 @@ $query = "INSERT INTO TypeProduit(RefInterne, Marque,Denomination, Description, 
 ('$ref','$brand', '$denom', '$description', '$contenance', '$barcode', '$sellprice', '$buyprice', '$vatrate', '$imgpath', TRUE)";
 
 database_edit($query);
+database_close();
 //TODO ADD BETTER VISUAL
 echo "Product added";
 ?>
