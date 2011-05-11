@@ -6,13 +6,13 @@
 </div>
 <div id="screen_body">
 	<fieldset>
-		<legend>Best Customer of the last 30 days (TOP 5)</legend>
+		<legend>Best Customers of the last 30 days (TOP 5)</legend>
 		<div id="warnings">
 			<?php
 			include("utils/database_connection.php");
 			database_connect();
 			$query ="SELECT NumTVA, SUM(Prix*Quantite) AS somme ,Transaction.idTran FROM Transaction NATURAL JOIN Composition GROUP BY
-			Transaction.NumTVA ORDER BY (Sum(Prix*Quantite)) DESC LIMIT 5";
+			Transaction.NumTVA And Date<CURDATE()-100 ORDER BY (Sum(Prix*Quantite)) DESC LIMIT 5";
 			$res = database_query($query);
 			while($row = $res->fetch()){
 			$id = $row['NumTVA'];

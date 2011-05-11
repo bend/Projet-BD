@@ -11,7 +11,7 @@
 			<?php
 			include("utils/database_connection.php");
 			database_connect();
-			$query = "SELECT RefInterne, Prix, Quantite FROM Vente JOIN Transaction JOIN Composition WHERE Transaction.IdTran=Vente.IdTran AND Transaction.IdTran=Composition.IdTran AND Transaction.Date+0 > CURDATE()-30 
+			$query = "SELECT RefInterne, Prix, Quantite FROM Vente JOIN Transaction JOIN Composition WHERE Transaction.IdTran=Vente.IdTran AND Transaction.IdTran=Composition.IdTran AND Transaction.Date+0 > CURDATE()-100 
 			ORDER BY Prix*Quantite DESC 
 			LIMIT 5";
 			$res = database_query($query);

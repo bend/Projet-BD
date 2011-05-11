@@ -11,7 +11,7 @@ include("graph/phpgraphlib.php");
 	<?php
 		include("utils/database_connection.php");
 		database_connect();
-		$query = "SELECT SUM(Prix*Quantite) as somme FROM Vente JOIN Transaction JOIN Composition WHERE Transaction.IdTran=Vente.IdTran AND Transaction.IdTran=Composition.IdTran AND Transaction.Date+0 > CURDATE()-30";
+		$query = "SELECT SUM(Prix*Quantite) as somme FROM Vente JOIN Transaction JOIN Composition WHERE Transaction.IdTran=Vente.IdTran AND Transaction.IdTran=Composition.IdTran AND Transaction.Date+0 > CURDATE()-100";
 		echo '<fieldset>';
 		$res = database_query($query);
 		$row = $res->fetch();
