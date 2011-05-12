@@ -92,7 +92,7 @@ function update_product(){
 		return;
 	}
 	/* Check that the numbers are numbers */
-	if(!is_num(document.getElementById("contenance").value) || !is_num(document.getElementById("barcode").value) || !is_num(document.getElementById("sellprice").value)   || !is_int(document.getElementById("buyprice").value) || !is_num(document.getElementById("vatrate").value) ){
+	if(!is_num(document.getElementById("contenance").value) || !is_num(document.getElementById("barcode").value) || !is_num(document.getElementById("sellprice").value)   || !is_num(document.getElementById("buyprice").value) || !is_num(document.getElementById("vatrate").value) ){
 		document.getElementById("loading").innerHTML = "";
 		return;
 	}
